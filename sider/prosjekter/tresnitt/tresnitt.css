@@ -20,7 +20,10 @@ body {
         sans-serif;
 
     font-size: 16px;
-    font-weight: 400;
+}
+
+body.no-scroll {
+    overflow: hidden;
 }
 
 
@@ -41,13 +44,12 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 
-    align-items: start;
-
     z-index: 1000;
 }
 
 .navbar a {
     color: white;
+
     text-decoration: none;
 
     font-size: 17px;
@@ -58,13 +60,23 @@ body {
     opacity: 0.55;
 }
 
-.projects-dropdown {
-    position: relative;
-    justify-self: start;
+.logo {
+    justify-self: center;
+
+    font-size: 18px !important;
 }
 
-.projects-link {
-    display: block;
+.navbar > a:last-child {
+    justify-self: end;
+}
+
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.projects-dropdown {
+    position: relative;
 }
 
 .projects-dropdown::after {
@@ -78,22 +90,6 @@ body {
     width: 220px;
     height: 20px;
 }
-
-.logo {
-    justify-self: center;
-    text-align: center;
-
-    font-size: 18px !important;
-}
-
-.navbar > a:last-child {
-    justify-self: end;
-}
-
-
-/* =========================
-   DROPDOWN
-========================= */
 
 .dropdown-menu {
     position: absolute;
@@ -146,8 +142,8 @@ body {
 ========================= */
 
 main {
-    padding-top: 105px;
-    padding-bottom: 140px;
+    padding-top: 95px;
+    padding-bottom: 120px;
 }
 
 
@@ -156,26 +152,28 @@ main {
 ========================= */
 
 .intro {
-    width: 94%;
-    max-width: 1900px;
+    width: 96%;
+    max-width: 2000px;
 
     margin: 0 auto;
 
-    padding: 45px 0 120px;
+    padding: 35px 0 45px;
 
     display: grid;
 
-    grid-template-columns:
-        minmax(0, 1fr)
-        320px;
+    grid-template-columns: 1fr 300px;
 
-    gap: 70px;
-
-    align-items: start;
+    gap: 40px;
 }
+
+
+/* =========================
+   TITEL + ÅRSTALL
+========================= */
 
 .intro-title {
     display: flex;
+
     flex-direction: column;
 
     align-items: flex-start;
@@ -197,6 +195,11 @@ main {
     line-height: 1;
 }
 
+
+/* =========================
+   BESKRIVELSE
+========================= */
+
 .intro p {
     margin: 5px 0 0;
 
@@ -204,73 +207,76 @@ main {
     line-height: 1.3;
 }
 
-.project-type {
-    display: block;
-
-    margin-top: 18px;
-}
-
 
 /* =========================
-   RESTEN AV BILDENE
+   BILDER
 ========================= */
 
 .project-grid {
-    width: 94%;
-    max-width: 1900px;
+    width: 96%;
+    max-width: 2000px;
 
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 
-    display: flex;
+    display: grid;
 
-    flex-direction: column;
+    grid-template-columns: 1fr 1fr;
 
-    gap: 45px;
+    column-gap: 45px;
+    row-gap: 45px;
+
+    align-items: start;
 }
 
 .project-grid .item {
-    width: 80%;
+    width: 100%;
+    min-width: 0;
 }
 
-.project-grid img {
+.project-grid .item img {
     display: block;
 
     width: 100%;
-
     height: auto;
 
+    max-width: 100%;
+    max-height: calc(100vh - 170px);
+
     object-fit: contain;
+    object-position: left top;
 
     cursor: zoom-in;
 
     transition: opacity 0.25s ease;
 }
 
-.project-grid img:hover {
-    opacity: 0.92;
+.project-grid .item img:hover {
+    opacity: 0.88;
 }
 
 
 /* =========================
-   SKISSER NEDERST
+   SKISSER
 ========================= */
 
 .sketches {
-    width: 94%;
-    max-width: 1900px;
+    width: 96%;
+    max-width: 2000px;
 
     margin: 70px auto 0;
 
-    display: flex;
+    display: grid;
 
-    justify-content: flex-end;
+    grid-template-columns: 1fr 1fr;
 
-    gap: 45px;
+    column-gap: 45px;
+    row-gap: 45px;
+
+    align-items: start;
 }
 
 .sketch-item {
-    width: 30%;
+    width: 100%;
 }
 
 .sketch-item img {
@@ -279,7 +285,11 @@ main {
     width: 100%;
     height: auto;
 
+    max-width: 100%;
+    max-height: calc(100vh - 170px);
+
     object-fit: contain;
+    object-position: left top;
 
     cursor: zoom-in;
 
@@ -287,15 +297,16 @@ main {
 }
 
 .sketch-item img:hover {
-    opacity: 0.92;
+    opacity: 0.88;
 }
 
 .sketch-item p {
-    margin: 8px 0 0;
+    margin: 7px 0 0;
+
+    color: #ffa9d1;
 
     font-size: 13px;
-    line-height: 1.3;
-    color: #ffa9d1;
+    line-height: 1.2;
 }
 
 
@@ -311,7 +322,7 @@ main {
     width: 100%;
     height: 100%;
 
-    background: #ff1493;
+    background: rgba(255, 20, 147, 0.96);
 
     display: flex;
 
@@ -323,11 +334,9 @@ main {
     opacity: 0;
     visibility: hidden;
 
-    transition:
-        opacity 0.25s ease,
-        visibility 0.25s ease;
+    z-index: 5000;
 
-    z-index: 3000;
+    transition: opacity 0.2s ease;
 }
 
 .lightbox.active {
@@ -360,25 +369,25 @@ main {
 .close {
     position: absolute;
 
-    top: 20px;
-    right: 30px;
+    top: 16px;
+    right: 27px;
 
-    border: none;
+    border: 0;
 
-    background: transparent;
+    background: none;
 
     color: white;
 
-    font-family: inherit;
+    font-family: Arial, sans-serif;
 
-    font-size: 42px;
-    font-weight: 400;
+    font-size: 50px;
+    font-weight: 200;
 
     line-height: 1;
 
     cursor: pointer;
 
-    z-index: 10;
+    z-index: 5001;
 }
 
 .close:hover {
@@ -391,7 +400,7 @@ main {
 
 
 /* =========================
-   MOBILE
+   MOBIL
 ========================= */
 
 @media (max-width: 700px) {
@@ -408,90 +417,93 @@ main {
         font-size: 16px !important;
     }
 
-    .dropdown-menu {
-        top: 25px;
-        width: 200px;
-    }
-
-    .dropdown-menu a {
-        font-size: 13px;
-        padding: 4px 0;
-    }
-
-
-    /* MAIN */
 
     main {
-        padding-top: 90px;
-        padding-bottom: 90px;
+        padding-top: 75px;
+        padding-bottom: 70px;
     }
 
 
     /* INTRO */
 
     .intro {
-        width: 92%;
+        width: 94%;
 
         display: block;
 
-        padding: 35px 0 75px;
+        padding: 35px 0 35px;
     }
 
     .intro h1 {
         font-size: 54px;
-        line-height: 0.9;
     }
+
+
+    /* ÅRSTALL */
 
     .year {
         margin-top: 70px;
 
         font-size: 13px;
-        line-height: 1.2;
     }
+
 
     .intro p {
         max-width: 350px;
 
-        margin-top: 30px;
-
-        font-size: 14px;
-        line-height: 1.35;
+        margin-top: 25px;
     }
 
 
-    /* RESTEN */
+    /* BILDER */
 
     .project-grid {
-        width: 92%;
+        width: 94%;
 
-        gap: 35px;
+        grid-template-columns: 1fr;
+
+        column-gap: 0;
+        row-gap: 35px;
     }
 
     .project-grid .item {
         width: 100%;
     }
 
-    .project-grid img {
+    .project-grid .item img {
         width: 100%;
+        height: auto;
+
+        max-height: none;
     }
 
 
     /* SKISSER */
 
     .sketches {
-        width: 92%;
+        width: 94%;
 
-        margin-top: 45px;
+        grid-template-columns: 1fr;
 
-        gap: 10px;
+        gap: 35px;
+
+        margin-top: 60px;
     }
 
-    .sketch-item {
-        width: 50%;
+    .sketch-item img {
+        width: 100%;
+        height: auto;
+
+        max-height: none;
     }
+
+
+    /* KREDITERING */
 
     .sketch-item p {
-        font-size: 12px;
+        margin-top: 5px;
+
+        font-size: 11px;
     }
 
 
@@ -502,14 +514,14 @@ main {
     }
 
     .lightbox-inner img {
-        max-width: 94vw;
-        max-height: 88vh;
+        max-width: 97vw;
+        max-height: 86vh;
     }
 
     .close {
-        top: 16px;
-        right: 20px;
+        top: 10px;
+        right: 17px;
 
-        font-size: 36px;
+        font-size: 42px;
     }
 }

@@ -1,7 +1,3 @@
-/* =====================================
-   RESET
-===================================== */
-
 * {
     box-sizing: border-box;
 }
@@ -12,6 +8,7 @@ html {
 
 body {
     margin: 0;
+
     background: #ff1493;
     color: white;
 
@@ -33,16 +30,19 @@ body {
 
 .navbar {
     position: fixed;
+
     top: 0;
     left: 0;
 
     width: 100%;
+
     padding: 24px 32px;
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 
     align-items: start;
+
     z-index: 1000;
 }
 
@@ -60,7 +60,7 @@ body {
 
 
 /* =====================================
-   PROSJEKTER / DROPDOWN
+   PROSJEKTER DROPDOWN
 ===================================== */
 
 .projects-dropdown {
@@ -76,6 +76,7 @@ body {
     content: "";
 
     position: absolute;
+
     top: 100%;
     left: 0;
 
@@ -90,6 +91,7 @@ body {
     left: 0;
 
     width: 220px;
+
     padding: 10px 0 0 0;
 
     display: flex;
@@ -167,6 +169,7 @@ body {
     max-width: 1900px;
 
     margin: 0 auto;
+
     padding: 45px 0 55px;
 
     display: grid;
@@ -196,6 +199,7 @@ body {
 
     font-size: 88px;
     line-height: 0.9;
+
     font-weight: 400;
 }
 
@@ -224,7 +228,7 @@ body {
 
 
 /* =====================================
-   HOVEDBILDER
+   DE TO STORE HOVEDBILDENE
 ===================================== */
 
 .project-image-row {
@@ -233,12 +237,35 @@ body {
 
     margin: 0 auto 70px;
 
-    display: block;
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    gap: 45px;
+
+    align-items: start;
 }
 
+
+/* =====================================
+   BILDECONTAINER
+===================================== */
+
 .project-image-row .image-container {
-    width: 80%;
+    width: 100%;
+
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
 }
+
+
+/* =====================================
+   HOVEDBILDER
+===================================== */
 
 .project-image-row img {
     display: block;
@@ -246,7 +273,12 @@ body {
     width: 100%;
     height: auto;
 
+    max-width: 100%;
+    max-height: calc(100vh - 50px);
+
     object-fit: contain;
+
+    object-position: left top;
 
     cursor: zoom-in;
 
@@ -273,7 +305,7 @@ body {
 
 
 /* =====================================
-   MERCH / COLLAGE
+   MERCH GRID
 ===================================== */
 
 .project-grid {
@@ -333,10 +365,8 @@ body {
 
 
 /* =====================================
-   VARIASJONER
+   VENSTRE KOLONNE
 ===================================== */
-
-/* VENSTRE */
 
 .left-column .item:nth-child(1) {
     width: 100%;
@@ -359,7 +389,9 @@ body {
 }
 
 
-/* HØYRE */
+/* =====================================
+   HØYRE KOLONNE
+===================================== */
 
 .right-column .item:nth-child(1) {
     width: 88%;
@@ -384,6 +416,7 @@ body {
 
 .lightbox {
     position: fixed;
+
     inset: 0;
 
     width: 100%;
@@ -476,6 +509,8 @@ body {
 
 @media (max-width: 700px) {
 
+    /* NAV */
+
     .navbar {
         padding: 18px;
     }
@@ -526,36 +561,62 @@ body {
 
     .year {
         margin-top: 25px;
+
         font-size: 13px;
     }
 
     .project-description {
         max-width: 400px;
+
         margin-top: 30px;
     }
 
 
-    /* HOVEDBILDER */
+    /* =================================
+       HOVEDBILDER PÅ MOBIL
+    ================================= */
 
     .project-image-row {
         width: 92%;
+
         margin: 0 auto 45px;
+
+        display: block;
     }
 
     .project-image-row .image-container {
         width: 100%;
+
+        margin-bottom: 35px;
+    }
+
+    .project-image-row .image-container:last-child {
+        margin-bottom: 0;
+    }
+
+    .project-image-row img {
+        width: 100%;
+        height: auto;
+
+        max-width: 100%;
+        max-height: none;
+
+        object-fit: contain;
     }
 
 
     /* BILDETEKST */
 
     .image-caption {
-        font-size: 12px;
         margin-top: 7px;
+
+        font-size: 12px;
     }
 
 
-    /* MERCH */
+    /* =================================
+       MERCH
+    ================================= */
 
     .project-grid {
         width: 92%;
@@ -579,7 +640,9 @@ body {
     }
 
 
-    /* LIGHTBOX */
+    /* =================================
+       LIGHTBOX
+    ================================= */
 
     .lightbox {
         padding: 20px;
@@ -596,5 +659,4 @@ body {
 
         font-size: 42px;
     }
-
 }

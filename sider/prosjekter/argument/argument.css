@@ -246,21 +246,35 @@ body {
 
 
 /* =====================================
-   BILDER
+   BILDER PÅ PC
 ===================================== */
 
 .image-container {
     width: 100%;
+
+    display: flex;
+
+    justify-content: flex-start;
+
+    align-items: flex-start;
 }
 
 .image-container img {
     display: block;
 
-    width: 100%;
+    width: auto;
 
-    height: auto;
+    max-width: 100%;
+
+    height: calc(100vh - 150px);
 
     object-fit: contain;
+
+    transition: opacity 0.3s ease;
+}
+
+.image-container img:hover {
+    opacity: 0.8;
 }
 
 
@@ -278,19 +292,6 @@ body {
     font-size: 14px;
 
     line-height: 1.35;
-}
-
-
-/* =====================================
-   HOVER PÅ BILDER
-===================================== */
-
-.image-container img {
-    transition: opacity 0.3s ease;
-}
-
-.image-container img:hover {
-    opacity: 0.8;
 }
 
 
@@ -370,6 +371,25 @@ body {
         display: block;
     }
 
+    .image-container {
+        width: 100%;
+
+        display: block;
+    }
+
+    .image-container img {
+        width: 100%;
+
+        height: auto;
+
+        max-width: 100%;
+
+        object-fit: contain;
+    }
+
+
+    /* TEKST */
+
     .image-text {
         margin-top: 18px;
 
@@ -380,3 +400,4 @@ body {
         font-size: 13px;
     }
 }
+
