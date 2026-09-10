@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Omar Sheriff — Mina Lynum</title>
+
+    <link rel="stylesheet" href="omarsheriff.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="projects-dropdown">
+
+        <a href="../../../index.html" class="projects-link">
+            prosjekter
+        </a>
+
+        <div class="dropdown-menu">
+
+            <a href="../argument/argument.html">argument</a>
+            <a href="../bachelor/bachelor.html">bachelor</a>
+            <a href="../clockworksky/clockworksky.html">clockwork Sky</a>
+            <a href="../lettering/lettering.html">lettering</a>
+            <a href="../meaningoflife/meaningoflife.html">meaning of life</a>
+            <a href="../omarsheriff/omarsheriff.html">omar sheriff</a>
+            <a href="../pang/pang.html">pang</a>
+            <a href="../pioner/pioner.html">pioner</a>
+            <a href="../tresnitt/tresnitt.html">tresnitt</a>
+
+        </div>
+
+    </div>
+
+
+    <a href="../../../index.html" class="logo">
+        mina lynum
+    </a>
+
+
+    <a href="../../kontakt/kontakt.html" class="contact-link">
+        kontakt
+    </a>
+
+</header>
+
+
+<main class="project-page">
+
+
+    <!-- INTRO -->
+
+    <section class="project-intro">
+
+        <div class="project-title">
+
+            <h1>
+                omar sheriff - karpe
+            </h1>
+
+            <div class="year">
+                2022
+            </div>
+
+        </div>
+
+
+        <div class="project-description">
+
+            <p>
+                merchandise og plakatlayout + mod. "omar sheriff" lettering, for karpe sitt prosjekt,
+                omar sheriff. laget i forbindelse med de ti konsertene
+                de avholdt i oslo spektrum i 2022. merchandise ble solgt
+                på nettbutikken jensogjens, i popup i bjørvika, oslo -
+                i tillegg til på konsertarenaen. plakat ble brukt som
+                promotering for konsertene på digitale flater og i oslo by, samt
+                under konsertene
+                <br><br>
+                den visuelle identiteten for "omar sheriff" vant gull
+                i visuelt, åpen klasse 2023
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- STOR TEGNING -->
+
+    <section class="project-image-row">
+
+        <div class="image-container">
+
+            <img
+                src="bilder/sheriffbackprint.jpg"
+                alt="Omar Sheriff tegning"
+                class="zoomable"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- STOR PLAKAT -->
+
+    <section class="project-image-row">
+
+        <div class="image-container">
+
+            <img
+                src="bilder/sheriffplakat.jpeg"
+                alt="Omar Sheriff plakat"
+                class="zoomable"
+            >
+
+            <p class="image-caption">
+                foto: michael ray vera cruz angeles
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MERCH -->
+
+    <section class="project-grid">
+
+
+        <!-- VENSTRE KOLONNE -->
+
+        <div class="column left-column">
+
+            <div class="item">
+                <img
+                    src="bilder/sheriffmerch1.jpg"
+                    alt="Omar Sheriff merch 1"
+                    class="zoomable"
+                >
+            </div>
+
+
+            <div class="item">
+                <img
+                    src="bilder/karpeboard.jpg"
+                    alt="Karpe board"
+                    class="zoomable"
+                >
+            </div>
+
+
+            <div class="item">
+                <img
+                    src="bilder/sheriffmerch3.jpg"
+                    alt="Omar Sheriff merch 3"
+                    class="zoomable"
+                >
+            </div>
+
+
+            <div class="item">
+                <img
+                    src="bilder/sheriffmerch5.jpg"
+                    alt="Omar Sheriff merch 5"
+                    class="zoomable"
+                >
+            </div>
+
+
+            <div class="item">
+                <img
+                    src="bilder/sheriffmerch7.jpg"
+                    alt="Omar Sheriff merch 7"
+                    class="zoomable"
+                >
+            </div>
+
+        </div>
+
+
+        <!-- HØYRE KOLONNE -->
+
+        <div class="column right-column">
+
+            <div class="item">
+                <img
+                    src="bilder/sheriffmerch2.jpg"
+                    alt="Omar Sheriff merch 2"
+                    class="zoomable"
+                >
+            </div>
+
+
+            <div class="item">
+                <img
+                    src="bilder/karpeposter2.jpg"
+                    alt="Karpe poster"
+                    class="zoomable"
+                >
+            </div>
+
+
+            <div class="item">
+                <img
+                    src="bilder/sheriffmerch4.jpg"
+                    alt="Omar Sheriff merch 4"
+                    class="zoomable"
+                >
+            </div>
+
+
+            <div class="item">
+                <img
+                    src="bilder/sheriffmerch6.jpg"
+                    alt="Omar Sheriff merch 6"
+                    class="zoomable"
+                >
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+
+    <button
+        class="close"
+        id="close"
+        aria-label="Lukk"
+    >
+        ×
+    </button>
+
+    <div
+        class="lightbox-inner"
+        id="lightboxInner"
+    ></div>
+
+</div>
+
+
+<script>
+
+const zoomables = document.querySelectorAll(".zoomable");
+
+const lightbox = document.getElementById("lightbox");
+
+const lightboxInner = document.getElementById("lightboxInner");
+
+const closeButton = document.getElementById("close");
+
+
+zoomables.forEach(element => {
+
+    element.addEventListener("click", () => {
+
+        lightboxInner.innerHTML = "";
+
+        const image = document.createElement("img");
+
+        image.src = element.src;
+        image.alt = element.alt;
+
+        lightboxInner.appendChild(image);
+
+        lightbox.classList.add("active");
+
+        document.body.classList.add("no-scroll");
+
+    });
+
+});
+
+
+function closeLightbox() {
+
+    lightbox.classList.remove("active");
+
+    document.body.classList.remove("no-scroll");
+
+    lightboxInner.innerHTML = "";
+
+}
+
+
+closeButton.addEventListener(
+    "click",
+    closeLightbox
+);
+
+
+lightbox.addEventListener(
+    "click",
+    event => {
+
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+
+    }
+);
+
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (event.key === "Escape") {
+            closeLightbox();
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>

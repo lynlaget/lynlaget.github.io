@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lettering — Mina Lynum</title>
+
+    <link rel="stylesheet" href="lettering.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="projects-dropdown">
+
+        <a href="../../../index.html">prosjekter</a>
+
+        <div class="dropdown-menu">
+
+            <a href="../argument/argument.html">argument</a>
+            <a href="../bachelor/bachelor.html">bachelor</a>
+            <a href="../clockworksky/clockworksky.html">clockwork sky</a>
+            <a href="../lettering/lettering.html">lettering</a>
+            <a href="../meaningoflife/meaningoflife.html">meaning of life</a>
+            <a href="../omarsheriff/omarsheriff.html">omar sheriff</a>
+            <a href="../pang/pang.html">pang</a>
+            <a href="../pioner/pioner.html">pioner</a>
+            <a href="../tresnitt/tresnitt.html">tresnitt</a>
+
+        </div>
+
+    </div>
+
+
+    <a href="../../../index.html" class="logo">
+        mina lynum
+    </a>
+
+
+    <a href="../../kontakt/kontakt.html">
+        kontakt
+    </a>
+
+</header>
+
+
+<main>
+
+    <section class="intro">
+
+        <div class="intro-title">
+
+            <h1>lettering</h1>
+
+            <div class="year">
+                studentarbeid ved kunsthøgskolen i oslo 2025
+            </div>
+
+        </div>
+
+
+        <p>
+            lettering og typografi i prosjekt som omhandlet hvordan typiske
+            samtids-memes endrer uttrykk ved å gi de en mindre flyktig natur
+            og uttrykk. penn på akvarellpapir
+        </p>
+
+    </section>
+
+
+    <section class="lettering-grid">
+
+
+        <!-- VENSTRE KOLONNE -->
+
+        <div class="column left-column">
+
+            <div class="item large">
+                <img
+                    src="bilder/lettering1.jpg"
+                    alt="Lettering 1"
+                    class="zoomable"
+                >
+            </div>
+
+
+            <div class="item video video-left">
+                <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    class="zoomable"
+                >
+                    <source
+                        src="video/lettervid2.mp4"
+                        type="video/mp4"
+                    >
+                </video>
+            </div>
+
+
+            <div class="item large">
+                <img
+                    src="bilder/lettering3.jpg"
+                    alt="Lettering 3"
+                    class="zoomable"
+                >
+            </div>
+
+
+            <div class="item large">
+                <img
+                    src="bilder/lettering4.jpg"
+                    alt="Lettering 4"
+                    class="zoomable"
+                >
+            </div>
+
+        </div>
+
+
+        <!-- HØYRE KOLONNE -->
+
+        <div class="column right-column">
+
+            <div class="item video video-right first-video">
+                <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    class="zoomable"
+                >
+                    <source
+                        src="video/lettervid1.mp4"
+                        type="video/mp4"
+                    >
+                </video>
+            </div>
+
+
+            <div class="item large">
+                <img
+                    src="bilder/lettering2.jpg"
+                    alt="Lettering 2"
+                    class="zoomable"
+                >
+            </div>
+
+
+            <div class="item video video-right">
+                <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    class="zoomable"
+                >
+                    <source
+                        src="video/lettervid3.mp4"
+                        type="video/mp4"
+                    >
+                </video>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+
+    <button class="close" id="close">
+        ×
+    </button>
+
+    <div class="lightbox-inner" id="lightboxInner"></div>
+
+</div>
+
+
+<script>
+
+const zoomables = document.querySelectorAll(".zoomable");
+const lightbox = document.getElementById("lightbox");
+const lightboxInner = document.getElementById("lightboxInner");
+const closeButton = document.getElementById("close");
+
+
+zoomables.forEach(element => {
+
+    element.addEventListener("click", () => {
+
+        lightboxInner.innerHTML = "";
+
+        if (element.tagName === "IMG") {
+
+            const image = document.createElement("img");
+
+            image.src = element.src;
+            image.alt = element.alt;
+
+            lightboxInner.appendChild(image);
+
+        }
+
+
+        if (element.tagName === "VIDEO") {
+
+            const video = document.createElement("video");
+
+            video.src = element.querySelector("source").src;
+
+            video.controls = true;
+            video.autoplay = true;
+            video.loop = true;
+            video.muted = true;
+            video.playsInline = true;
+
+            lightboxInner.appendChild(video);
+
+        }
+
+        lightbox.classList.add("active");
+
+        document.body.classList.add("no-scroll");
+
+    });
+
+});
+
+
+function closeLightbox() {
+
+    lightbox.classList.remove("active");
+
+    document.body.classList.remove("no-scroll");
+
+    lightboxInner.innerHTML = "";
+
+}
+
+
+closeButton.addEventListener("click", closeLightbox);
+
+
+lightbox.addEventListener("click", event => {
+
+    if (event.target === lightbox) {
+        closeLightbox();
+    }
+
+});
+
+
+document.addEventListener("keydown", event => {
+
+    if (event.key === "Escape") {
+        closeLightbox();
+    }
+
+});
+
+</script>
+
+</body>
+</html>

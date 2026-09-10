@@ -1,0 +1,720 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #ff1493;
+    color: white;
+
+    font-family:
+        "Neue Haas Grotesk Text Pro",
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+/* ========================================
+   NAVIGASJON
+======================================== */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 24px 32px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    align-items: start;
+
+    z-index: 1000;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 17px;
+    line-height: 1;
+}
+
+.navbar a:hover {
+    opacity: 0.55;
+}
+
+.projects-dropdown {
+    position: relative;
+
+    justify-self: start;
+}
+
+.projects-link {
+    display: block;
+}
+
+.logo {
+    justify-self: center;
+
+    text-align: center;
+
+    font-size: 18px !important;
+}
+
+.contact-link {
+    justify-self: end;
+}
+
+
+/* ========================================
+   DROPDOWN
+======================================== */
+
+.projects-dropdown::after {
+    content: "";
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 220px;
+    height: 20px;
+}
+
+.dropdown-menu {
+    position: absolute;
+
+    top: 28px;
+    left: 0;
+
+    width: 220px;
+
+    padding: 10px 0 0 0;
+
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-5px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+
+    z-index: 2000;
+}
+
+.dropdown-menu a {
+    display: block;
+
+    padding: 4px 0;
+
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.dropdown-menu a:hover {
+    opacity: 0.55;
+}
+
+.projects-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   SIDE
+======================================== */
+
+.project-page {
+    padding-top: 105px;
+    padding-bottom: 120px;
+}
+
+
+/* ========================================
+   INTRO
+======================================== */
+
+.project-intro {
+    width: 94%;
+    max-width: 1900px;
+
+    margin: 0 auto;
+
+    padding: 45px 0 55px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        320px;
+
+    gap: 70px;
+
+    align-items: start;
+}
+
+
+/* VENSTRE KOLONNE */
+
+.project-title {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+.project-title h1 {
+    margin: 0;
+
+    font-size: 88px;
+    line-height: 0.9;
+
+    font-weight: 400;
+}
+
+.year {
+    margin-top: 55px;
+
+    font-size: 15px;
+    line-height: 1;
+}
+
+
+/* HØYRE KOLONNE */
+
+.project-description {
+    padding-top: 8px;
+}
+
+.project-description p {
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.35;
+}
+
+.project-type {
+    margin-top: 18px !important;
+}
+
+
+/* ========================================
+   PROSESS / COLLAGE
+======================================== */
+
+.process-section {
+    width: 94%;
+    max-width: 1900px;
+
+    margin: 0 auto;
+
+    columns: 2;
+
+    column-gap: 45px;
+
+    column-fill: balance;
+}
+
+.process-item {
+    width: 100%;
+
+    margin: 0 0 45px;
+
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.process-item img,
+.process-item video {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* ========================================
+   FOTO-KREDITERING
+======================================== */
+
+.photo-credit {
+    margin-top: 7px;
+
+    color: #ffa9d1;
+
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+
+/* ========================================
+   VARIASJONER
+======================================== */
+
+.process-image-1 {
+    width: 100%;
+}
+
+.process-video-1 {
+    width: 82%;
+
+    margin-left: auto;
+}
+
+.process-image-2 {
+    width: 88%;
+}
+
+.process-video-2 {
+    width: 78%;
+}
+
+.process-image-3 {
+    width: 100%;
+}
+
+.process-video-3 {
+    width: 90%;
+
+    margin-left: auto;
+}
+
+.process-image-4 {
+    width: 94%;
+}
+
+.process-image-5 {
+    width: 82%;
+}
+
+.process-video-4 {
+    width: 76%;
+
+    margin-left: auto;
+}
+
+.process-image-6 {
+    width: 100%;
+}
+
+.process-image-7 {
+    width: 92%;
+
+    margin-left: auto;
+}
+
+.process-image-8 {
+    width: 100%;
+}
+
+
+/* ========================================
+   LITT MER BEVEGELSE
+======================================== */
+
+.process-image-2,
+.process-image-5,
+.process-image-7 {
+    margin-top: 10px;
+}
+
+.process-video-1,
+.process-video-3,
+.process-video-4 {
+    margin-top: 5px;
+}
+
+
+/* ========================================
+   BOKEN
+======================================== */
+
+.book-section {
+    width: 94%;
+    max-width: 1900px;
+
+    margin: 110px auto 0;
+}
+
+.book-heading {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        320px;
+
+    gap: 70px;
+
+    margin-bottom: 35px;
+}
+
+.book-intro {
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.35;
+}
+
+
+/* ========================================
+   BOK-VISER
+======================================== */
+
+.book-viewer {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 85vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.book-page {
+    height: 82vh;
+
+    max-width: 72vw;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    cursor: zoom-in;
+}
+
+.book-page img {
+    display: block;
+
+    height: 100%;
+    width: auto;
+
+    max-width: 100%;
+
+    object-fit: contain;
+}
+
+
+/* ========================================
+   PILER
+======================================== */
+
+.book-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 70px;
+    height: 70px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 32px;
+
+    cursor: pointer;
+}
+
+.book-arrow:hover {
+    opacity: 0.55;
+}
+
+.book-prev {
+    left: 0;
+}
+
+.book-next {
+    right: 0;
+}
+
+
+/* ========================================
+   SIDE-TELLER
+======================================== */
+
+.book-counter {
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+.book-hint {
+    margin: 12px 0 0;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.65;
+}
+
+
+/* ========================================
+   FULLSKJERM
+======================================== */
+
+.fullscreen {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: #ff1493;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    cursor: zoom-out;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+
+    z-index: 2000;
+}
+
+.fullscreen.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fullscreen img {
+    max-width: 95vw;
+    max-height: 95vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+}
+
+.fullscreen-close {
+    position: absolute;
+
+    top: 24px;
+    right: 32px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 42px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.fullscreen-close:hover {
+    opacity: 0.55;
+}
+
+
+/* ========================================
+   MOBIL
+======================================== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 18px;
+    }
+
+    .navbar a {
+        font-size: 15px;
+    }
+
+    .logo {
+        font-size: 16px !important;
+    }
+
+
+    /* SIDE */
+
+    .project-page {
+        padding-top: 90px;
+        padding-bottom: 80px;
+    }
+
+
+    /* INTRO */
+
+    .project-intro {
+        width: 92%;
+
+        padding: 50px 0 45px;
+
+        display: block;
+    }
+
+    .project-title h1 {
+        font-size: 54px;
+    }
+
+    .year {
+        margin-top: 25px;
+
+        font-size: 13px;
+    }
+
+    .project-description {
+        max-width: 400px;
+
+        margin-top: 30px;
+    }
+
+
+    /* PROSESS */
+
+    .process-section {
+        width: 92%;
+
+        columns: 1;
+
+        column-gap: 0;
+    }
+
+    .process-item {
+        width: 100% !important;
+
+        margin: 0 0 30px !important;
+
+        break-inside: avoid;
+    }
+
+
+    /* FOTO-KREDITERING */
+
+    .photo-credit {
+        margin-top: 6px;
+
+        font-size: 12px;
+    }
+
+
+    /* VIDEOER */
+
+    .process-video-1,
+    .process-video-2,
+    .process-video-3,
+    .process-video-4 {
+        width: 88% !important;
+
+        margin-left: auto !important;
+    }
+
+
+    /* BOKEN */
+
+    .book-section {
+        width: 92%;
+
+        margin-top: 80px;
+    }
+
+    .book-heading {
+        display: block;
+
+        margin-bottom: 30px;
+    }
+
+    .book-intro {
+        max-width: 350px;
+
+        margin-top: 20px;
+    }
+
+    .book-viewer {
+        min-height: 70vh;
+    }
+
+    .book-page {
+        height: 68vh;
+
+        max-width: 80vw;
+    }
+
+    .book-arrow {
+        width: 45px;
+        height: 45px;
+
+        font-size: 25px;
+    }
+
+    .book-prev {
+        left: -10px;
+    }
+
+    .book-next {
+        right: -10px;
+    }
+
+    .book-counter {
+        margin-top: 18px;
+    }
+
+
+    /* FULLSKJERM */
+
+    .fullscreen {
+        padding: 25px;
+    }
+
+    .fullscreen-close {
+        top: 18px;
+        right: 20px;
+
+        font-size: 36px;
+    }
+
+}

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Love Sting — Mina Lynum</title>
+
+<link rel="stylesheet" href="lovesting.css">
+
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="projects-dropdown">
+
+    <a href="../../../index.html">
+        prosjekter
+    </a>
+
+    <div class="dropdown-menu">
+
+        <a href="../argument/argument.html">argument</a>
+            <a href="../bachelor/bachelor.html">bachelor</a>
+            <a href="../clockworksky/clockworksky.html">clockwork Sky</a>
+            <a href="../lettering/lettering.html">lettering</a>
+            <a href="../lovesting/lovesting.html">love sting</a>
+            <a href="../meaningoflife/meaningoflife.html">meaning of life</a>
+            <a href="../omarsheriff/omarsheriff.html">omar sheriff</a>
+            <a href="../pang/pang.html">pang</a>
+            <a href="../pioner/pioner.html">pioner</a>
+            <a href="../tresnitt/tresnitt.html">tresnitt</a>
+    </div>
+
+</div>
+
+
+<a href="../../../index.html" class="logo">
+    mina lynum
+</a>
+
+
+<a href="../../kontakt/kontakt.html">
+    kontakt
+</a>
+
+</header>
+
+<main>
+
+<!-- ==========================================
+     INTRO
+=========================================== -->
+
+<section class="intro">
+
+    <h1>love sting -  thomas carlsen's transmission</h1>
+
+    <p>
+        singelcover for thomas carlsen's transmission, tegnet med penn, fargelagt digitalt. det er også laget tilhørende merch, som også er penntegnet
+    </p>
+<div>
+    2026
+</div>
+</section>
+
+
+
+<!-- ==========================================
+     SINGLE COVER
+     HELT ALENE
+=========================================== -->
+
+<section class="cover-section">
+
+    <div class="cover">
+
+        <img
+            src="bilder/transmission3.png"
+            alt="Love Sting singelcover"
+            class="zoomable"
+        >
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     RESTEN AV PROSJEKTET
+
+     VENSTRE:
+     MOCKUP
+     SKISSE UNDER
+
+     HØYRE:
+     STOR MERCH-TEGNING
+=========================================== -->
+
+<section class="lovesting-grid">
+
+
+    <!-- ======================================
+         VENSTRE KOLONNE
+    ======================================= -->
+
+    <div class="column left-column">
+
+
+        <!-- MERCH MOCKUP -->
+
+        <div class="item merch-mockup">
+
+            <img
+                src="bilder/transmissionmockup.png"
+                alt="Love Sting merch mockup"
+                class="zoomable"
+            >
+
+        </div>
+
+
+
+        <!-- FØRSTE SKISSE
+             LIGGER UNDER MOCKUPEN -->
+
+        <div class="item sketch">
+
+            <img
+                src="bilder/transmission3skisse.jpg"
+                alt="Første skisse til Love Sting"
+                class="zoomable"
+            >
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ======================================
+         HØYRE KOLONNE
+    ======================================= -->
+
+    <div class="column right-column">
+
+
+        <!-- STOR MERCH-ILLUSTRASJON -->
+
+        <div class="item merch-illustration">
+
+            <img
+                src="bilder/transmission3merch.png"
+                alt="Love Sting merch illustrasjon"
+                class="zoomable"
+            >
+
+        </div>
+
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- ==========================================
+     LIGHTBOX
+=========================================== -->
+
+<div class="lightbox" id="lightbox">
+
+<button
+    class="close"
+    id="close"
+    aria-label="Lukk"
+>
+    ×
+</button>
+
+
+<div
+    class="lightbox-inner"
+    id="lightboxInner"
+></div>
+
+</div>
+
+<script>
+
+const zoomables =
+    document.querySelectorAll(".zoomable");
+
+const lightbox =
+    document.getElementById("lightbox");
+
+const lightboxInner =
+    document.getElementById("lightboxInner");
+
+const closeButton =
+    document.getElementById("close");
+
+
+
+/* ==========================================
+   ÅPNE LIGHTBOX
+========================================== */
+
+zoomables.forEach(element => {
+
+    element.addEventListener("click", () => {
+
+        lightboxInner.innerHTML = "";
+
+        const image =
+            document.createElement("img");
+
+        image.src =
+            element.src;
+
+        image.alt =
+            element.alt;
+
+        lightboxInner.appendChild(image);
+
+        lightbox.classList.add("active");
+
+        document.body.classList.add("no-scroll");
+
+    });
+
+});
+
+
+
+/* ==========================================
+   LUKK LIGHTBOX
+========================================== */
+
+function closeLightbox() {
+
+    lightbox.classList.remove("active");
+
+    document.body.classList.remove("no-scroll");
+
+    lightboxInner.innerHTML = "";
+
+}
+
+
+
+closeButton.addEventListener(
+    "click",
+    closeLightbox
+);
+
+
+
+/* Klikk utenfor bildet */
+
+lightbox.addEventListener(
+    "click",
+    event => {
+
+        if (event.target === lightbox) {
+
+            closeLightbox();
+
+        }
+
+    }
+);
+
+
+
+/* ESC */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (event.key === "Escape") {
+
+            closeLightbox();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Clockwork Sky — Mina Lynum</title>
+
+    <link rel="stylesheet" href="clockworksky.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="projects-dropdown">
+
+        <a href="../../../index.html" class="projects-link">
+            prosjekter
+        </a>
+
+        <div class="dropdown-menu">
+
+            <a href="../argument/argument.html">argument</a>
+            <a href="../bachelor/bachelor.html">bachelor</a>
+            <a href="../clockworksky/clockworksky.html">clockwork sky</a>
+            <a href="../lettering/lettering.html">lettering</a>
+            <a href="../meaningoflife/meaningoflife.html">meaning of life</a>
+            <a href="../omarsheriff/omarsheriff.html">omar sheriff</a>
+            <a href="../pang/pang.html">pang</a>
+            <a href="../pioner/pioner.html">pioner</a>
+            <a href="../tresnitt/tresnitt.html">tresnitt</a>
+
+        </div>
+
+    </div>
+
+
+    <a href="../../../index.html" class="logo">
+        mina lynum
+    </a>
+
+
+    <a href="../../kontakt/kontakt.html" class="contact-link">
+        kontakt
+    </a>
+
+</header>
+
+
+<main class="project-page">
+
+
+    <!-- =====================================
+         INTRO
+    ====================================== -->
+
+    <section class="project-intro">
+
+        <div class="project-title">
+
+            <h1>
+                clockwork sky - thomas carlsen's transmission
+            </h1>
+
+            <div class="year">
+                2025
+            </div>
+
+        </div>
+
+
+        <div class="project-description">
+
+            <p>
+                platecover og cd inlay og disk for albumet clockwork sky av
+                thomas carlsen's transmission. illustrasjon malt i vannmaling
+                og digitalt bearbeidet
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         STORT HOVEDBILDE
+    ====================================== -->
+
+    <section class="cover-section">
+
+        <div class="cover-image">
+
+            <img
+                src="bilder/transmission2.png"
+                alt="Clockwork Sky platecover"
+                class="zoomable"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         TO KOLONNER
+    ====================================== -->
+
+    <section class="project-grid">
+
+
+        <!-- VENSTRE KOLONNE -->
+
+        <div class="left-column">
+
+            <div class="item">
+
+                <img
+                    src="bilder/transmission3.jpg"
+                    alt="Clockwork Sky disk"
+                    class="zoomable"
+                >
+
+            </div>
+
+
+            <div class="item">
+
+                <img
+                    src="bilder/transmission4.jpg"
+                    alt="Clockwork Sky disk"
+                    class="zoomable"
+                >
+
+            </div>
+
+
+            <div class="item">
+
+                <img
+                    src="bilder/transmissioncd.jpg"
+                    alt="Clockwork Sky CD"
+                    class="zoomable"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- HØYRE KOLONNE -->
+
+        <div class="right-column">
+
+
+            <div class="sketch">
+
+                <img
+                    src="bilder/transmissionvannfarge.jpg"
+                    alt="Tidlig vannfargeskisse til Clockwork Sky"
+                    class="zoomable"
+                >
+
+                <p class="image-caption">
+                    tidlig skisse, malt med vannmaling
+                </p>
+
+            </div>
+
+
+            <div class="sketch">
+
+                <img
+                    src="bilder/transmissionskisse.jpg"
+                    alt="Outline skisse til Clockwork Sky"
+                    class="zoomable"
+                >
+
+                <p class="image-caption">
+                    outline skisse
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         BOOKLET
+    ====================================== -->
+
+    <section class="booklet-section">
+
+        <div class="booklet-item">
+
+            <img
+                src="bilder/booklet.jpg"
+                alt="Clockwork Sky booklet"
+                class="zoomable"
+            >
+
+        </div>
+
+
+        <div class="booklet-item">
+
+            <img
+                src="bilder/booklet2.jpg"
+                alt="Clockwork Sky booklet"
+                class="zoomable"
+            >
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- =====================================
+     LIGHTBOX
+====================================== -->
+
+<div class="lightbox" id="lightbox">
+
+    <button
+        class="close"
+        id="close"
+        aria-label="Lukk"
+    >
+        ×
+    </button>
+
+
+    <div
+        class="lightbox-inner"
+        id="lightboxInner"
+    ></div>
+
+</div>
+
+
+<script>
+
+const zoomables = document.querySelectorAll(".zoomable");
+
+const lightbox = document.getElementById("lightbox");
+
+const lightboxInner = document.getElementById("lightboxInner");
+
+const closeButton = document.getElementById("close");
+
+
+zoomables.forEach(element => {
+
+    element.addEventListener("click", () => {
+
+        lightboxInner.innerHTML = "";
+
+        const image = document.createElement("img");
+
+        image.src = element.src;
+        image.alt = element.alt;
+
+        lightboxInner.appendChild(image);
+
+        lightbox.classList.add("active");
+
+        document.body.classList.add("no-scroll");
+
+    });
+
+});
+
+
+function closeLightbox() {
+
+    lightbox.classList.remove("active");
+
+    document.body.classList.remove("no-scroll");
+
+    lightboxInner.innerHTML = "";
+
+}
+
+
+closeButton.addEventListener(
+    "click",
+    closeLightbox
+);
+
+
+lightbox.addEventListener("click", event => {
+
+    if (event.target === lightbox) {
+
+        closeLightbox();
+
+    }
+
+});
+
+
+document.addEventListener("keydown", event => {
+
+    if (event.key === "Escape") {
+
+        closeLightbox();
+
+    }
+
+});
+
+</script>
+
+
+</body>
+
+</html>

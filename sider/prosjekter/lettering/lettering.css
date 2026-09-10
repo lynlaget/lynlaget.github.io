@@ -1,0 +1,507 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    background: #ff1493;
+    color: white;
+
+    font-family:
+        "Neue Haas Grotesk Text Pro",
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    font-size: 16px;
+}
+
+
+/* ========================================
+   NAVIGASJON
+======================================== */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 24px 32px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    z-index: 1000;
+}
+
+.navbar a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 17px;
+    line-height: 1;
+}
+
+.navbar a:hover {
+    opacity: 0.55;
+}
+
+.logo {
+    justify-self: center;
+
+    font-size: 18px !important;
+}
+
+.navbar > a:last-child {
+    justify-self: end;
+}
+
+
+/* ========================================
+   DROPDOWN
+======================================== */
+
+.projects-dropdown {
+    position: relative;
+}
+
+.projects-dropdown::after {
+    content: "";
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 220px;
+    height: 20px;
+}
+
+.dropdown-menu {
+    position: absolute;
+
+    top: 28px;
+    left: 0;
+
+    width: 220px;
+
+    padding: 10px 0 0 0;
+
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-5px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+
+    z-index: 2000;
+}
+
+.dropdown-menu a {
+    display: block;
+
+    padding: 4px 0;
+
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.projects-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   INTRO
+======================================== */
+
+main {
+    padding-top: 95px;
+    padding-bottom: 100px;
+}
+
+.intro {
+    width: 96%;
+    max-width: 2000px;
+
+    margin: 0 auto;
+
+    padding: 35px 0 35px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 300px;
+
+    gap: 40px;
+}
+
+.intro-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.intro h1 {
+    margin: 0;
+
+    font-size: 88px;
+    line-height: 0.88;
+
+    font-weight: 400;
+}
+
+.year {
+    margin-top: 35px;
+
+    font-size: 15px;
+    line-height: 1;
+}
+
+.intro p {
+    margin: 4px 0 0;
+
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+
+/* ========================================
+   HOVEDGRID
+======================================== */
+
+.lettering-grid {
+    width: 96%;
+    max-width: 2000px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+
+    align-items: start;
+}
+
+
+/* ========================================
+   KOLONNER
+======================================== */
+
+.column {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+/* ========================================
+   ELEMENTER
+======================================== */
+
+.item {
+    width: 100%;
+}
+
+.item img,
+.item video {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    cursor: zoom-in;
+
+    transition: opacity 0.25s ease;
+}
+
+.item img:hover,
+.item video:hover {
+    opacity: 0.85;
+}
+
+
+/* ========================================
+   BILDER
+======================================== */
+
+.large {
+    width: 100%;
+}
+
+
+/* ========================================
+   VIDEOER
+======================================== */
+
+.video {
+    width: 88%;
+}
+
+.video-left {
+    margin-left: 0;
+}
+
+.video-right {
+    margin-left: auto;
+}
+
+
+/* ========================================
+   SMÅ FORSKYVNINGER
+======================================== */
+
+.first-video {
+    transform: translateX(1%);
+}
+
+.video-left {
+    transform: translateX(-1%);
+}
+
+.right-column .video:not(.first-video) {
+    transform: translateX(1%);
+}
+
+
+/* ========================================
+   VIDEOER I SVART/HVITT
+======================================== */
+
+.video video {
+    filter: grayscale(100%);
+}
+
+
+/* ========================================
+   LIGHTBOX
+======================================== */
+
+.lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255, 20, 147, 0.96);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 5000;
+
+    transition: opacity 0.2s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ========================================
+   LIGHTBOX INNHOLD
+======================================== */
+
+.lightbox-inner {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-inner img,
+.lightbox-inner video {
+    display: block;
+
+    max-width: 95vw;
+    max-height: 92vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* ========================================
+   LIGHTBOX VIDEO
+======================================== */
+
+.lightbox-inner video {
+    filter: grayscale(100%);
+}
+
+
+/* ========================================
+   LUKKEKNAPP
+======================================== */
+
+.close {
+    position: absolute;
+
+    top: 16px;
+    right: 27px;
+
+    border: 0;
+
+    background: none;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 50px;
+    font-weight: 200;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 5001;
+}
+
+.close:hover {
+    opacity: 0.55;
+}
+
+
+/* ========================================
+   STOPP SCROLLING
+======================================== */
+
+.no-scroll {
+    overflow: hidden;
+}
+
+
+/* ========================================
+   MOBIL
+======================================== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 18px;
+    }
+
+    .navbar a {
+        font-size: 15px;
+    }
+
+    .logo {
+        font-size: 16px !important;
+    }
+
+
+    main {
+        padding-top: 75px;
+        padding-bottom: 60px;
+    }
+
+
+    /* INTRO */
+
+    .intro {
+        width: 94%;
+
+        display: block;
+
+        padding: 35px 0 30px;
+    }
+
+    .intro h1 {
+        font-size: 54px;
+    }
+
+    .year {
+        margin-top: 25px;
+
+        font-size: 15px;
+    }
+
+    .intro p {
+        max-width: 350px;
+
+        margin-top: 25px;
+    }
+
+
+    /* GRID */
+
+    .lettering-grid {
+        width: 94%;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 7px;
+    }
+
+    .column {
+        gap: 7px;
+    }
+
+
+    /* VIDEOER */
+
+    .video {
+        width: 92%;
+    }
+
+
+    /* LIGHTBOX */
+
+    .lightbox {
+        padding: 20px;
+    }
+
+    .lightbox-inner img,
+    .lightbox-inner video {
+        max-width: 97vw;
+        max-height: 86vh;
+    }
+
+    .close {
+        top: 10px;
+        right: 17px;
+
+        font-size: 42px;
+    }
+
+}
