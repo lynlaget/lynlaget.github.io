@@ -425,7 +425,7 @@ body {
 
 
 /* ========================================
-   PILER
+   PILER – VANLIG VISNING
 ======================================== */
 
 .book-arrow {
@@ -449,6 +449,8 @@ body {
     font-size: 32px;
 
     cursor: pointer;
+
+    z-index: 5;
 }
 
 .book-arrow:hover {
@@ -535,6 +537,53 @@ body {
     object-fit: contain;
 }
 
+
+/* ========================================
+   FULLSKJERM – PILER
+======================================== */
+
+.fullscreen-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 70px;
+    height: 70px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 32px;
+
+    cursor: pointer;
+
+    z-index: 5;
+}
+
+.fullscreen-arrow:hover {
+    opacity: 0.55;
+}
+
+.fullscreen-prev {
+    left: 25px;
+}
+
+.fullscreen-next {
+    right: 25px;
+}
+
+
+/* ========================================
+   FULLSKJERM – LUKK
+======================================== */
+
 .fullscreen-close {
     position: absolute;
 
@@ -553,6 +602,8 @@ body {
     line-height: 1;
 
     cursor: pointer;
+
+    z-index: 6;
 }
 
 .fullscreen-close:hover {
@@ -689,6 +740,8 @@ body {
         height: 45px;
 
         font-size: 25px;
+
+        z-index: 5;
     }
 
     .book-prev {
@@ -710,11 +763,30 @@ body {
         padding: 25px;
     }
 
+    .fullscreen-arrow {
+        width: 45px;
+        height: 45px;
+
+        font-size: 25px;
+
+        z-index: 5;
+    }
+
+    .fullscreen-prev {
+        left: 5px;
+    }
+
+    .fullscreen-next {
+        right: 5px;
+    }
+
     .fullscreen-close {
         top: 18px;
         right: 20px;
 
         font-size: 36px;
+
+        z-index: 6;
     }
 
 }
