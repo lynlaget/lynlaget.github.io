@@ -1,467 +1,561 @@
 * {
-    box-sizing: border-box;
-}
+  box-sizing: border-box;
+  }
 
 html {
-    scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
+margin: 0;
 
-    background: #ff1493;
-    color: white;
+```
+background: #ff1493;
+color: white;
 
-    font-family:
-        "Neue Haas Grotesk Text Pro",
-        "Helvetica Neue",
-        Helvetica,
-        Arial,
-        sans-serif;
+font-family:
+    "Neue Haas Grotesk Text Pro",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
 
-    font-size: 16px;
+font-size: 16px;
+```
+
 }
 
-
 /* =========================
-   HEADER
+HEADER
 ========================= */
 
 .navbar {
-    position: fixed;
+position: fixed;
 
-    top: 0;
-    left: 0;
+```
+top: 0;
+left: 0;
 
-    width: 100%;
+width: 100%;
 
-    padding: 24px 32px;
+padding: 24px 32px;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+display: grid;
 
-    z-index: 1000;
+grid-template-columns: 1fr 1fr 1fr;
+
+align-items: start;
+
+z-index: 1000;
+```
+
 }
 
 .navbar a {
-    color: white;
+color: white;
 
-    text-decoration: none;
+```
+text-decoration: none;
 
-    font-size: 17px;
-    line-height: 1;
+font-size: 17px;
+
+line-height: 1;
+```
+
 }
 
 .navbar a:hover {
-    opacity: 0.55;
+opacity: 0.55;
 }
 
 .logo {
-    justify-self: center;
+justify-self: center;
 
-    font-size: 18px !important;
+```
+font-size: 18px !important;
+```
+
 }
 
 .navbar > a:last-child {
-    justify-self: end;
+justify-self: end;
 }
 
-
 /* =========================
-   DROPDOWN
+DROPDOWN
 ========================= */
 
 .projects-dropdown {
-    position: relative;
+position: relative;
+
+```
+justify-self: start;
+```
+
 }
 
 .projects-dropdown::after {
-    content: "";
+content: "";
 
-    position: absolute;
+```
+position: absolute;
 
-    top: 100%;
-    left: 0;
+top: 100%;
+left: 0;
 
-    width: 220px;
-    height: 20px;
+width: 220px;
+height: 20px;
+```
+
 }
 
 .dropdown-menu {
-    position: absolute;
+position: absolute;
 
-    top: 28px;
-    left: 0;
+```
+top: 24px;
+left: 0;
 
-    width: 220px;
+width: 220px;
 
-    padding: 10px 0 0 0;
+padding: 10px 0 0;
 
-    display: flex;
-    flex-direction: column;
+display: flex;
+flex-direction: column;
 
-    opacity: 0;
-    visibility: hidden;
+opacity: 0;
+visibility: hidden;
 
-    transform: translateY(-5px);
+transform: translateY(-5px);
 
-    transition:
-        opacity 0.2s ease,
-        transform 0.2s ease;
+transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 
-    z-index: 2000;
+z-index: 2000;
+```
+
 }
 
 .dropdown-menu a {
-    display: block;
+display: block;
 
-    padding: 4px 0;
+```
+padding: 4px 0;
 
-    font-size: 14px;
-    line-height: 1.2;
+font-size: 14px;
+
+line-height: 1.2;
+```
+
 }
 
 .dropdown-menu a:hover {
-    opacity: 0.55;
+opacity: 0.55;
 }
 
 .projects-dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
+opacity: 1;
 
-    transform: translateY(0);
+```
+visibility: visible;
+
+transform: translateY(0);
+```
+
 }
 
-
 /* =========================
-   MAIN
+MAIN
 ========================= */
 
 main {
-    padding-top: 95px;
-    padding-bottom: 120px;
+padding-top: 95px;
+
+```
+padding-bottom: 120px;
+```
+
 }
 
-
 /* =========================
-   INTRO
+INTRO
 ========================= */
 
 .intro {
-    width: 96%;
-    max-width: 2000px;
+width: 96%;
 
-    margin: 0 auto;
+```
+max-width: 2000px;
 
-    padding: 35px 0 45px;
+margin: 0 auto;
 
-    display: grid;
+padding: 35px 0 45px;
 
-    grid-template-columns: 1fr 300px;
+display: grid;
 
-    gap: 40px;
+grid-template-columns: 1fr 300px;
+
+gap: 40px;
+```
+
 }
 
-
 /* =========================
-   TITEL + ÅRSTALL
+TITEL + ÅRSTALL
 ========================= */
 
 .intro-title {
-    display: flex;
+display: flex;
 
-    flex-direction: column;
+```
+flex-direction: column;
 
-    align-items: flex-start;
+align-items: flex-start;
+```
+
 }
 
 .intro h1 {
-    margin: 0;
+margin: 0;
 
-    font-size: 88px;
-    line-height: 0.88;
+```
+font-size: 88px;
 
-    font-weight: 400;
+line-height: 0.88;
+
+font-weight: 400;
+```
+
 }
 
 .year {
-    margin-top: 100px;
+margin-top: 100px;
 
-    font-size: 15px;
-    line-height: 1;
+```
+font-size: 15px;
+
+line-height: 1;
+```
+
 }
 
-
 /* =========================
-   BESKRIVELSE
+BESKRIVELSE
 ========================= */
 
 .intro p {
-    margin: 5px 0 0;
+margin: 5px 0 0;
 
-    font-size: 15px;
-    line-height: 1.3;
+```
+font-size: 15px;
+
+line-height: 1.3;
+```
+
 }
 
-
 /* =========================
-   BILDER
+BILDER
 ========================= */
 
 .project-grid {
-    width: 96%;
-    max-width: 2000px;
+width: 96%;
 
-    margin: 0 auto;
+```
+max-width: 2000px;
 
-    display: grid;
+margin: 0 auto;
 
-    grid-template-columns: 1fr 1fr;
+display: grid;
 
-    gap: 12px;
+grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    align-items: start;
+gap: 12px;
+
+align-items: start;
+```
+
 }
 
 .item {
-    width: 100%;
+width: 100%;
 }
 
 .item img {
-    display: block;
+display: block;
 
-    width: 100%;
-    height: auto;
+```
+width: 100%;
 
-    cursor: zoom-in;
+height: auto;
 
-    transition: opacity 0.25s ease;
+cursor: zoom-in;
+
+transition:
+    opacity 0.25s ease;
+```
+
 }
 
 .item img:hover {
-    opacity: 0.88;
+opacity: 0.88;
 }
 
-
 /* =========================
-   FOTO-KREDITERING
+FOTO-KREDITERING
 ========================= */
 
 .photo-credit {
-    margin-top: 7px;
+margin-top: 7px;
 
-    color: #ffa9d1;
+```
+color: #ffa9d1;
 
-    font-size: 13px;
-    line-height: 1.2;
+font-size: 13px;
+
+line-height: 1.2;
+```
+
 }
 
-
 /* =========================
-   LIGHTBOX
+LIGHTBOX
 ========================= */
 
 .lightbox {
-    position: fixed;
+position: fixed;
 
-    inset: 0;
+```
+inset: 0;
 
-    width: 100%;
-    height: 100%;
+width: 100%;
+height: 100%;
 
-    background: rgba(255, 20, 147, 0.96);
+background:
+    rgba(255, 20, 147, 0.96);
 
-    display: flex;
+display: flex;
 
-    justify-content: center;
-    align-items: center;
+justify-content: center;
+align-items: center;
 
-    padding: 40px;
+padding: 40px;
 
-    opacity: 0;
-    visibility: hidden;
+opacity: 0;
 
-    z-index: 5000;
+visibility: hidden;
 
-    transition: opacity 0.2s ease;
+z-index: 5000;
+
+transition:
+    opacity 0.2s ease;
+```
+
 }
 
 .lightbox.active {
-    opacity: 1;
-    visibility: visible;
+opacity: 1;
+
+```
+visibility: visible;
+```
+
 }
 
 .lightbox-inner {
-    width: 100%;
-    height: 100%;
+width: 100%;
 
-    display: flex;
+```
+height: 100%;
 
-    justify-content: center;
-    align-items: center;
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+```
+
 }
 
 .lightbox-inner img {
-    display: block;
+display: block;
 
-    max-width: 95vw;
-    max-height: 92vh;
+```
+max-width: 95vw;
 
-    width: auto;
-    height: auto;
+max-height: 92vh;
 
-    object-fit: contain;
+width: auto;
+
+height: auto;
+
+object-fit: contain;
+```
+
 }
 
-
 /* =========================
-   LUKKEKNAPP
+LUKKEKNAPP
 ========================= */
 
 .close {
-    position: absolute;
+position: absolute;
 
-    top: 16px;
-    right: 27px;
+```
+top: 16px;
 
-    border: 0;
+right: 27px;
 
-    background: none;
+border: 0;
 
-    color: white;
+background: none;
 
-    font-family: Arial, sans-serif;
+color: white;
 
-    font-size: 50px;
-    font-weight: 200;
+font-family: Arial, sans-serif;
 
-    line-height: 1;
+font-size: 50px;
 
-    cursor: pointer;
+font-weight: 200;
 
-    z-index: 5001;
+line-height: 1;
+
+cursor: pointer;
+
+z-index: 5001;
+```
+
 }
 
 .close:hover {
-    opacity: 0.55;
+opacity: 0.55;
 }
 
-
 /* =========================
-   STOPP SCROLLING
+STOPP SCROLLING
 ========================= */
 
 .no-scroll {
-    overflow: hidden;
+overflow: hidden;
+}
+
+/* =========================
+MOBIL
+========================= */
+
+@media screen and (max-width: 700px) {
+
+```
+.navbar {
+    padding: 18px;
+}
+
+.navbar a {
+    font-size: 15px;
+}
+
+.logo {
+    font-size: 16px !important;
+}
+
+
+/* MAIN */
+
+main {
+    padding-top: 75px;
+
+    padding-bottom: 70px;
+}
+
+
+/* INTRO */
+
+.intro {
+    width: 94%;
+
+    display: block;
+
+    padding: 35px 0 35px;
+}
+
+.intro h1 {
+    font-size: 54px;
+}
+
+
+/* ÅRSTALL */
+
+.year {
+    margin-top: 70px;
+
+    font-size: 13px;
+}
+
+
+/* BESKRIVELSE */
+
+.intro p {
+    max-width: 350px;
+
+    margin-top: 25px;
 }
 
 
 /* =========================
-   MOBIL
+   MOBIL: ÉN KOLONNE
 ========================= */
 
-@media (max-width: 700px) {
+.project-grid {
+    width: 94%;
 
-    .navbar {
-        padding: 18px;
-    }
+    display: grid !important;
 
-    .navbar a {
-        font-size: 15px;
-    }
+    grid-template-columns: 1fr !important;
 
-    .logo {
-        font-size: 16px !important;
-    }
+    grid-template-rows: auto;
 
+    gap: 7px;
 
-    main {
-        padding-top: 75px;
-        padding-bottom: 70px;
-    }
+    margin: 0 auto;
+}
 
+.project-grid .item {
+    width: 100%;
+}
 
-    /* -------------------------
-       INTRO
-    ------------------------- */
+.project-grid .item img {
+    width: 100%;
 
-    .intro {
-        width: 94%;
-
-        display: block;
-
-        padding: 35px 0 35px;
-    }
-
-    .intro h1 {
-        font-size: 54px;
-    }
+    height: auto;
+}
 
 
-    /* -------------------------
-       ÅRSTALL
-    ------------------------- */
+/* KREDITERING */
 
-    .year {
-        margin-top: 70px;
+.photo-credit {
+    margin-top: 5px;
 
-        font-size: 13px;
-    }
+    font-size: 11px;
+}
 
 
-    /* -------------------------
-       BESKRIVELSE
-    ------------------------- */
+/* LIGHTBOX */
 
-    .intro p {
-        max-width: 350px;
+.lightbox {
+    padding: 20px;
+}
 
-        margin-top: 25px;
-    }
+.lightbox-inner img {
+    max-width: 97vw;
 
+    max-height: 86vh;
+}
 
-    /* -------------------------
-       BILDER – ÉN KOLONNE
-    ------------------------- */
+.close {
+    top: 10px;
 
-    .project-grid {
-        width: 94%;
+    right: 17px;
 
-        grid-template-columns: 1fr;
-
-        gap: 7px;
-    }
-
-
-    /* -------------------------
-       KREDITERING
-    ------------------------- */
-
-    .photo-credit {
-        margin-top: 5px;
-
-        font-size: 11px;
-    }
-
-
-    /* -------------------------
-       LIGHTBOX
-    ------------------------- */
-
-    .lightbox {
-        padding: 20px;
-    }
-
-    .lightbox-inner img {
-        max-width: 97vw;
-        max-height: 86vh;
-    }
-
-    .close {
-        top: 10px;
-        right: 17px;
-
-        font-size: 42px;
-    }
-
+    font-size: 42px;
 }
