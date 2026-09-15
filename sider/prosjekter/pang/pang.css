@@ -430,13 +430,12 @@ main {
     }
 
 
-    /* BILDER */
+    /* BILDER – ÉN KOLONNE PÅ MOBIL */
 
     .project-grid {
         width: 94%;
 
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns: 1fr;
 
         gap: 7px;
     }
