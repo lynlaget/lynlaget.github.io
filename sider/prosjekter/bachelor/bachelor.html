@@ -345,13 +345,40 @@
 <!-- FULLSKJERM -->
 
 <div class="fullscreen" id="fullscreen">
-    <button class="fullscreen-arrow fullscreen-prev" id="fullscreenPrev" aria-label="Forrige side">←</button>
 
-    <button class="fullscreen-close" id="fullscreenClose" aria-label="Lukk fullskjerm">×</button>
+    <button
+        class="fullscreen-arrow fullscreen-prev"
+        id="fullscreenPrev"
+        aria-label="Forrige side"
+    >
+        ←
+    </button>
 
-    <img id="fullscreenImage" src="" alt="">
 
-    <button class="fullscreen-arrow fullscreen-next" id="fullscreenNext" aria-label="Neste side">→</button>
+    <button
+        class="fullscreen-close"
+        id="fullscreenClose"
+        aria-label="Lukk fullskjerm"
+    >
+        ×
+    </button>
+
+
+    <img
+        id="fullscreenImage"
+        src=""
+        alt=""
+    >
+
+
+    <button
+        class="fullscreen-arrow fullscreen-next"
+        id="fullscreenNext"
+        aria-label="Neste side"
+    >
+        →
+    </button>
+
 </div>
 
 
@@ -377,6 +404,12 @@ const fullscreenImage =
 
 const fullscreenClose =
     document.getElementById("fullscreenClose");
+
+const fullscreenPrev =
+    document.getElementById("fullscreenPrev");
+
+const fullscreenNext =
+    document.getElementById("fullscreenNext");
 
 
 let page = 1;
@@ -452,7 +485,7 @@ function previousPage() {
 
 
 /* =========================
-   PILER
+   PILER – VANLIG VISNING
 ========================= */
 
 nextButton.addEventListener(
@@ -463,6 +496,33 @@ nextButton.addEventListener(
 prevButton.addEventListener(
     "click",
     previousPage
+);
+
+
+/* =========================
+   PILER – FULLSKJERM
+========================= */
+
+fullscreenNext.addEventListener(
+    "click",
+    function(event) {
+
+        event.stopPropagation();
+
+        nextPage();
+
+    }
+);
+
+fullscreenPrev.addEventListener(
+    "click",
+    function(event) {
+
+        event.stopPropagation();
+
+        previousPage();
+
+    }
 );
 
 
@@ -538,7 +598,7 @@ fullscreen.addEventListener(
         }
 
 
-        /* BILDET */
+        /* FULLSKJERM-BILDET */
 
         if (
             event.target === fullscreenImage
