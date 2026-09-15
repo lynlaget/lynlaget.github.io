@@ -365,15 +365,26 @@
 
 <script>
 
-const bookImage = document.getElementById("bookImage");
-const currentPage = document.getElementById("currentPage");
+const bookImage =
+    document.getElementById("bookImage");
 
-const prevButton = document.getElementById("prevButton");
-const nextButton = document.getElementById("nextButton");
+const currentPage =
+    document.getElementById("currentPage");
 
-const fullscreen = document.getElementById("fullscreen");
-const fullscreenImage = document.getElementById("fullscreenImage");
-const fullscreenClose = document.getElementById("fullscreenClose");
+const prevButton =
+    document.getElementById("prevButton");
+
+const nextButton =
+    document.getElementById("nextButton");
+
+const fullscreen =
+    document.getElementById("fullscreen");
+
+const fullscreenImage =
+    document.getElementById("fullscreenImage");
+
+const fullscreenClose =
+    document.getElementById("fullscreenClose");
 
 
 let page = 1;
@@ -381,9 +392,14 @@ let page = 1;
 const totalPages = 26;
 
 
+/* =========================
+   VIS SIDE
+========================= */
+
 function showPage() {
 
-    bookImage.src = `bilder/bachsider${page}.jpg`;
+    bookImage.src =
+        `bilder/bachsider${page}.jpg`;
 
     bookImage.alt =
         `Side ${page} i bachelorboken`;
@@ -391,8 +407,27 @@ function showPage() {
     currentPage.textContent =
         String(page).padStart(2, "0");
 
+
+    /* OPPDATER FULLSKJERM */
+
+    if (
+        fullscreen.classList.contains("is-open")
+    ) {
+
+        fullscreenImage.src =
+            bookImage.src;
+
+        fullscreenImage.alt =
+            bookImage.alt;
+
+    }
+
 }
 
+
+/* =========================
+   NESTE SIDE
+========================= */
 
 function nextPage() {
 
@@ -407,6 +442,10 @@ function nextPage() {
 }
 
 
+/* =========================
+   FORRIGE SIDE
+========================= */
+
 function previousPage() {
 
     if (page > 1) {
@@ -420,11 +459,14 @@ function previousPage() {
 }
 
 
+/* =========================
+   PILER
+========================= */
+
 nextButton.addEventListener(
     "click",
     nextPage
 );
-
 
 prevButton.addEventListener(
     "click",
@@ -432,25 +474,39 @@ prevButton.addEventListener(
 );
 
 
+/* =========================
+   TASTATUR
+========================= */
+
 document.addEventListener(
     "keydown",
     function(event) {
 
         if (event.key === "ArrowRight") {
+
             nextPage();
+
         }
 
         if (event.key === "ArrowLeft") {
+
             previousPage();
+
         }
 
         if (event.key === "Escape") {
+
             closeFullscreen();
+
         }
 
     }
 );
 
+
+/* =========================
+   ÅPNE FULLSKJERM
+========================= */
 
 bookImage.addEventListener(
     "click",
@@ -468,6 +524,79 @@ bookImage.addEventListener(
 );
 
 
+/* =========================
+   KLIKK I FULLSKJERM
+========================= */
+
+fullscreen.addEventListener(
+    "click",
+    function(event) {
+
+
+        /* X */
+
+        if (
+            event.target === fullscreenClose
+        ) {
+
+            closeFullscreen();
+
+            return;
+
+        }
+
+
+        /* BILDET */
+
+        if (
+            event.target === fullscreenImage
+        ) {
+
+            const clickPosition =
+                event.clientX /
+                window.innerWidth;
+
+
+            /* VENSTRE HALVDEL */
+
+            if (clickPosition < 0.5) {
+
+                previousPage();
+
+            }
+
+
+            /* HØYRE HALVDEL */
+
+            else {
+
+                nextPage();
+
+            }
+
+            return;
+
+        }
+
+
+        /* ROSA BAKGRUNN */
+
+        if (
+            event.target === fullscreen
+        ) {
+
+            closeFullscreen();
+
+        }
+
+    }
+);
+
+
+/* =========================
+   LUKK FULLSKJERM
+========================= */
+
 function closeFullscreen() {
 
     fullscreen.classList.remove("is-open");
@@ -481,16 +610,11 @@ fullscreenClose.addEventListener(
 );
 
 
-fullscreen.addEventListener(
-    "click",
-    function(event) {
+/* =========================
+   START
+========================= */
 
-        if (event.target === fullscreen) {
-            closeFullscreen();
-        }
-
-    }
-);
+showPage();
 
 </script>
 
