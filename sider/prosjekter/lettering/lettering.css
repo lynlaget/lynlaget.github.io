@@ -1,12 +1,3 @@
-/* =========================================================
-   LETTERING – MINA LYNUM
-   ========================================================= */
-
-
-/* ---------------------------------------------------------
-   RESET
-   --------------------------------------------------------- */
-
 * {
     box-sizing: border-box;
 }
@@ -17,141 +8,184 @@ html {
 
 body {
     margin: 0;
+
     background: #ff1493;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family:
+        "Neue Haas Grotesk Text Pro",
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    font-size: 16px;
 }
 
 
-/* ---------------------------------------------------------
+/* ========================================
    NAVIGASJON
-   --------------------------------------------------------- */
+======================================== */
 
 .navbar {
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
-    z-index: 1000;
 
     padding: 24px 32px;
 
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
 
-    background: #ff1493;
-}
-
-.nav-left {
-    justify-self: start;
-}
-
-.nav-center {
-    justify-self: center;
-}
-
-.nav-right {
-    justify-self: end;
+    z-index: 1000;
 }
 
 .navbar a {
     color: white;
+
     text-decoration: none;
-    font-size: 15px;
+
+    font-size: 17px;
+    line-height: 1;
 }
 
 .navbar a:hover {
-    text-decoration: underline;
+    opacity: 0.55;
+}
+
+.logo {
+    justify-self: center;
+
+    font-size: 18px !important;
+}
+
+.navbar > a:last-child {
+    justify-self: end;
 }
 
 
-/* ---------------------------------------------------------
+/* ========================================
    DROPDOWN
-   --------------------------------------------------------- */
+======================================== */
 
-.dropdown {
+.projects-dropdown {
     position: relative;
 }
 
-.dropdown > a {
-    cursor: pointer;
-}
+.projects-dropdown::after {
+    content: "";
 
-.dropdown-content {
-    display: none;
     position: absolute;
+
     top: 100%;
     left: 0;
 
-    min-width: 180px;
-    padding-top: 12px;
-
-    background: #ff1493;
+    width: 220px;
+    height: 20px;
 }
 
-.dropdown-content a {
+.dropdown-menu {
+    position: absolute;
+
+    top: 28px;
+    left: 0;
+
+    width: 220px;
+
+    padding: 10px 0 0 0;
+
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-5px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+
+    z-index: 2000;
+}
+
+.dropdown-menu a {
     display: block;
-    padding: 6px 0;
+
+    padding: 4px 0;
+
+    font-size: 14px;
+    line-height: 1.2;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+.projects-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
 }
 
 
-/* ---------------------------------------------------------
-   HOVEDINNHOLD
-   --------------------------------------------------------- */
+/* ========================================
+   INTRO
+======================================== */
 
 main {
     padding-top: 95px;
     padding-bottom: 100px;
 }
 
-
-/* ---------------------------------------------------------
-   INTRO
-   --------------------------------------------------------- */
-
 .intro {
     width: 96%;
     max-width: 2000px;
 
     margin: 0 auto;
-    padding: 35px 0;
+
+    padding: 35px 0 35px;
 
     display: grid;
+
     grid-template-columns: 1fr 300px;
+
     gap: 40px;
+}
+
+.intro-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .intro h1 {
     margin: 0;
 
     font-size: 88px;
-    line-height: 0.9;
+    line-height: 0.88;
+
     font-weight: 400;
-    letter-spacing: -0.04em;
 }
 
-.intro-year {
+.year {
+    margin-top: 35px;
+
     font-size: 15px;
-    line-height: 1.4;
+    line-height: 1;
 }
 
-.intro-text {
-    margin: 0;
+.intro p {
+    margin: 4px 0 0;
 
-    font-size: 17px;
-    line-height: 1.35;
-    max-width: 300px;
+    font-size: 15px;
+    line-height: 1.3;
 }
 
 
-/* ---------------------------------------------------------
-   HOVEDGRID – DESKTOP
-   --------------------------------------------------------- */
+/* ========================================
+   HOVEDGRID
+======================================== */
 
 .lettering-grid {
     width: 96%;
@@ -161,59 +195,35 @@ main {
 
     display: grid;
 
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
+    grid-template-columns: 1fr 1fr;
 
-    grid-template-areas:
-        "image1 video1"
-        "video2 image2"
-        "image3 video3"
-        "image4 .";
-
-    column-gap: 14px;
-    row-gap: 12px;
+    gap: 14px;
 
     align-items: start;
 }
 
 
-/* ---------------------------------------------------------
-   PLASSERING AV ELEMENTENE
-   --------------------------------------------------------- */
+/* ========================================
+   KOLONNER
+======================================== */
 
-.image-1 {
-    grid-area: image1;
-}
+.column {
+    min-width: 0;
 
-.video-1 {
-    grid-area: video1;
-}
+    display: flex;
+    flex-direction: column;
 
-.image-2 {
-    grid-area: image2;
-}
-
-.video-2 {
-    grid-area: video2;
-}
-
-.image-3 {
-    grid-area: image3;
-}
-
-.video-3 {
-    grid-area: video3;
-}
-
-.image-4 {
-    grid-area: image4;
+    gap: 12px;
 }
 
 
-/* ---------------------------------------------------------
-   BILDER OG VIDEO
-   --------------------------------------------------------- */
+/* ========================================
+   ELEMENTER
+======================================== */
+
+.item {
+    width: 100%;
+}
 
 .item img,
 .item video {
@@ -231,122 +241,194 @@ main {
 
 .item img:hover,
 .item video:hover {
-    opacity: 0.9;
+    opacity: 0.85;
 }
 
 
-/* ---------------------------------------------------------
-   VIDEOER
-   --------------------------------------------------------- */
+/* ========================================
+   BILDER
+======================================== */
 
-.item.video video {
+.large {
+    width: 100%;
+}
+
+
+/* ========================================
+   VIDEOER
+======================================== */
+
+.video {
+    width: 88%;
+}
+
+.video-left {
+    margin-left: 0;
+}
+
+.video-right {
+    margin-left: auto;
+}
+
+
+/* ========================================
+   SMÅ FORSKYVNINGER
+======================================== */
+
+.first-video {
+    transform: translateX(1%);
+}
+
+.video-left {
+    transform: translateX(-1%);
+}
+
+.right-column .video:not(.first-video) {
+    transform: translateX(1%);
+}
+
+
+/* ========================================
+   VIDEOER I SVART/HVITT
+======================================== */
+
+.video video {
     filter: grayscale(100%);
 }
 
 
-/*
-   Videoene er litt smalere enn bildene.
-*/
-
-.video-1,
-.video-2,
-.video-3 {
-    width: 88%;
-}
-
-
-/*
-   Video 1 og 3 ligger mot høyre.
-   Video 2 ligger mot venstre.
-*/
-
-.video-1,
-.video-3 {
-    justify-self: end;
-}
-
-.video-2 {
-    justify-self: start;
-}
-
-
-/* ---------------------------------------------------------
+/* ========================================
    LIGHTBOX
-   --------------------------------------------------------- */
+======================================== */
 
 .lightbox {
-    display: none;
-
     position: fixed;
-    z-index: 2000;
 
     inset: 0;
 
-    background: rgba(0, 0, 0, 0.92);
+    width: 100%;
+    height: 100%;
 
-    align-items: center;
+    background: rgba(255, 20, 147, 0.96);
+
+    display: flex;
+
     justify-content: center;
+    align-items: center;
 
-    padding: 30px;
+    padding: 40px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 5000;
+
+    transition: opacity 0.2s ease;
 }
 
 .lightbox.active {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
 }
 
-.lightbox img {
+
+/* ========================================
+   LIGHTBOX INNHOLD
+======================================== */
+
+.lightbox-inner {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-inner img,
+.lightbox-inner video {
+    display: block;
+
     max-width: 95vw;
-    max-height: 90vh;
+    max-height: 92vh;
 
     width: auto;
     height: auto;
 
     object-fit: contain;
-
-    cursor: zoom-out;
 }
 
-.lightbox-close {
+
+/* ========================================
+   LIGHTBOX VIDEO
+======================================== */
+
+.lightbox-inner video {
+    filter: grayscale(100%);
+}
+
+
+/* ========================================
+   LUKKEKNAPP
+======================================== */
+
+.close {
     position: absolute;
 
-    top: 20px;
-    right: 30px;
+    top: 16px;
+    right: 27px;
+
+    border: 0;
+
+    background: none;
 
     color: white;
 
-    font-size: 40px;
+    font-family: Arial, sans-serif;
+
+    font-size: 50px;
+    font-weight: 200;
+
     line-height: 1;
 
     cursor: pointer;
 
-    z-index: 2001;
+    z-index: 5001;
 }
 
-.lightbox-close:hover {
-    opacity: 0.7;
+.close:hover {
+    opacity: 0.55;
 }
 
 
-/* ---------------------------------------------------------
+/* ========================================
+   STOPP SCROLLING
+======================================== */
+
+.no-scroll {
+    overflow: hidden;
+}
+
+
+/* ========================================
    MOBIL
-   --------------------------------------------------------- */
+======================================== */
 
 @media (max-width: 700px) {
 
-    /* NAV */
-
     .navbar {
-        padding: 18px 18px;
-
-        grid-template-columns: 1fr auto 1fr;
+        padding: 18px;
     }
 
     .navbar a {
-        font-size: 13px;
+        font-size: 15px;
     }
 
+    .logo {
+        font-size: 16px !important;
+    }
 
-    /* MAIN */
 
     main {
         padding-top: 75px;
@@ -354,35 +436,38 @@ main {
     }
 
 
-    /* INTRO */
+    /* ----------------------------------------
+       INTRO
+    ---------------------------------------- */
 
     .intro {
         width: 94%;
 
         display: block;
 
-        padding: 25px 0 35px;
+        padding: 35px 0 30px;
     }
 
     .intro h1 {
         font-size: 54px;
-        line-height: 0.9;
     }
 
-    .intro-year {
-        margin-top: 18px;
-        margin-bottom: 20px;
-    }
-
-    .intro-text {
-        max-width: none;
+    .year {
+        margin-top: 25px;
 
         font-size: 15px;
-        line-height: 1.35;
+    }
+
+    .intro p {
+        max-width: 350px;
+
+        margin-top: 25px;
     }
 
 
-    /* GRID */
+    /* ----------------------------------------
+       MOBILGRID
+    ---------------------------------------- */
 
     .lettering-grid {
         width: 94%;
@@ -391,65 +476,112 @@ main {
         flex-direction: column;
 
         gap: 7px;
-
-        /*
-           Nullstiller desktop-gridet.
-        */
-
-        grid-template-columns: none;
-        grid-template-areas: none;
     }
 
 
     /*
-       HTML-rekkefølgen bestemmer nå
-       mobilrekkefølgen:
+       Vi "flater ut" de to kolonnene.
 
-       lettering1
-       video1
-       lettering2
-       video2
-       lettering3
-       video3
-       lettering4
+       HTML-en beholdes helt uendret,
+       men elementene kan nå sorteres
+       sammen på mobil.
     */
 
-    .lettering-grid .item {
-        width: 100%;
-
-        grid-area: auto;
+    .column {
+        display: contents;
     }
 
 
-    /* VIDEOER PÅ MOBIL */
+    /*
+       Riktig mobilrekkefølge:
 
-    .video-1,
-    .video-2,
-    .video-3 {
+       1. lettering1
+       2. video1
+       3. lettering2
+       4. video2
+       5. lettering3
+       6. video3
+       7. lettering4
+    */
+
+
+    /* BILDE 1 */
+
+    .left-column .item:nth-child(1) {
+        order: 1;
+    }
+
+
+    /* VIDEO 1 */
+
+    .right-column .item:nth-child(1) {
+        order: 2;
+    }
+
+
+    /* BILDE 2 */
+
+    .right-column .item:nth-child(2) {
+        order: 3;
+    }
+
+
+    /* VIDEO 2 */
+
+    .left-column .item:nth-child(2) {
+        order: 4;
+    }
+
+
+    /* BILDE 3 */
+
+    .left-column .item:nth-child(3) {
+        order: 5;
+    }
+
+
+    /* VIDEO 3 */
+
+    .right-column .item:nth-child(3) {
+        order: 6;
+    }
+
+
+    /* BILDE 4 */
+
+    .left-column .item:nth-child(4) {
+        order: 7;
+    }
+
+
+    /* ----------------------------------------
+       VIDEOER
+    ---------------------------------------- */
+
+    .video {
         width: 92%;
-
-        margin-left: auto;
-        margin-right: auto;
-
-        justify-self: auto;
     }
 
 
-    /* LIGHTBOX */
+    /* ----------------------------------------
+       LIGHTBOX
+    ---------------------------------------- */
 
     .lightbox {
-        padding: 15px;
+        padding: 20px;
     }
 
-    .lightbox img {
-        max-width: 96vw;
-        max-height: 85vh;
+    .lightbox-inner img,
+    .lightbox-inner video {
+        max-width: 97vw;
+        max-height: 86vh;
     }
 
-    .lightbox-close {
-        top: 15px;
-        right: 18px;
+    .close {
+        top: 10px;
+        right: 17px;
 
-        font-size: 34px;
+        font-size: 42px;
     }
+
 }
