@@ -1,587 +1,588 @@
 * {
-    box-sizing: border-box;
-}
+  box-sizing: border-box;
+  }
 
 html {
-    scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
+margin: 0;
+background: #ff1493;
+color: white;
 
-    background: #ff1493;
-    color: white;
+```
+font-family:
+    "Neue Haas Grotesk Text Pro",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
 
-    font-family:
-        "Neue Haas Grotesk Text Pro",
-        "Helvetica Neue",
-        Helvetica,
-        Arial,
-        sans-serif;
+font-size: 16px;
+```
 
-    font-size: 16px;
 }
 
-
 /* ========================================
-   NAVIGASJON
+NAVIGASJON
 ======================================== */
 
 .navbar {
-    position: fixed;
+position: fixed;
 
-    top: 0;
-    left: 0;
+```
+top: 0;
+left: 0;
 
-    width: 100%;
+width: 100%;
 
-    padding: 24px 32px;
+padding: 24px 32px;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+align-items: start;
 
-    z-index: 1000;
+z-index: 1000;
+```
+
 }
 
 .navbar a {
-    color: white;
+color: white;
+text-decoration: none;
 
-    text-decoration: none;
+```
+font-size: 17px;
+line-height: 1;
+```
 
-    font-size: 17px;
-    line-height: 1;
 }
 
 .navbar a:hover {
-    opacity: 0.55;
+opacity: 0.55;
 }
 
 .logo {
-    justify-self: center;
+justify-self: center;
 
-    font-size: 18px !important;
+```
+font-size: 18px !important;
+```
+
 }
 
 .navbar > a:last-child {
-    justify-self: end;
+justify-self: end;
 }
 
-
 /* ========================================
-   DROPDOWN
+DROPDOWN
 ======================================== */
 
 .projects-dropdown {
-    position: relative;
+position: relative;
+justify-self: start;
 }
 
 .projects-dropdown::after {
-    content: "";
+content: "";
 
-    position: absolute;
+```
+position: absolute;
 
-    top: 100%;
-    left: 0;
+top: 100%;
+left: 0;
 
-    width: 220px;
-    height: 20px;
+width: 220px;
+height: 20px;
+```
+
 }
 
 .dropdown-menu {
-    position: absolute;
+position: absolute;
 
-    top: 28px;
-    left: 0;
+```
+top: 24px;
+left: 0;
 
-    width: 220px;
+width: 220px;
 
-    padding: 10px 0 0 0;
+padding: 10px 0 0;
 
-    display: flex;
-    flex-direction: column;
+display: flex;
+flex-direction: column;
 
-    opacity: 0;
-    visibility: hidden;
+opacity: 0;
+visibility: hidden;
 
-    transform: translateY(-5px);
+transform: translateY(-5px);
 
-    transition:
-        opacity 0.2s ease,
-        transform 0.2s ease;
+transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 
-    z-index: 2000;
+z-index: 2000;
+```
+
 }
 
 .dropdown-menu a {
-    display: block;
+display: block;
 
-    padding: 4px 0;
+```
+padding: 4px 0;
 
-    font-size: 14px;
-    line-height: 1.2;
+font-size: 14px;
+line-height: 1.2;
+```
+
 }
 
 .projects-dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
+opacity: 1;
+visibility: visible;
 
-    transform: translateY(0);
+```
+transform: translateY(0);
+```
+
 }
 
-
 /* ========================================
-   INTRO
+INTRO
 ======================================== */
 
 main {
-    padding-top: 95px;
-    padding-bottom: 100px;
+padding-top: 95px;
+padding-bottom: 100px;
 }
 
 .intro {
-    width: 96%;
-    max-width: 2000px;
+width: 96%;
+max-width: 2000px;
 
-    margin: 0 auto;
+```
+margin: 0 auto;
 
-    padding: 35px 0 35px;
+padding: 35px 0 35px;
 
-    display: grid;
+display: grid;
 
-    grid-template-columns: 1fr 300px;
+grid-template-columns: 1fr 300px;
 
-    gap: 40px;
+gap: 40px;
+```
+
 }
 
 .intro-title {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
 }
 
 .intro h1 {
-    margin: 0;
+margin: 0;
 
-    font-size: 88px;
-    line-height: 0.88;
+```
+font-size: 88px;
+line-height: 0.88;
 
-    font-weight: 400;
+font-weight: 400;
+```
+
 }
 
 .year {
-    margin-top: 35px;
+margin-top: 35px;
 
-    font-size: 15px;
-    line-height: 1;
+```
+font-size: 15px;
+line-height: 1;
+```
+
 }
 
 .intro p {
-    margin: 4px 0 0;
+margin: 4px 0 0;
 
-    font-size: 15px;
-    line-height: 1.3;
+```
+font-size: 15px;
+line-height: 1.3;
+```
+
 }
 
-
 /* ========================================
-   HOVEDGRID
+HOVEDGRID
 ======================================== */
 
 .lettering-grid {
-    width: 96%;
-    max-width: 2000px;
+width: 96%;
+max-width: 2000px;
 
-    margin: 0 auto;
+```
+margin: 0 auto;
 
-    display: grid;
+display: grid;
 
-    grid-template-columns: 1fr 1fr;
+grid-template-columns: 1fr 1fr;
 
-    gap: 14px;
+gap: 14px;
 
-    align-items: start;
+align-items: start;
+```
+
 }
 
-
 /* ========================================
-   KOLONNER
+KOLONNER
 ======================================== */
 
 .column {
-    min-width: 0;
+min-width: 0;
 
-    display: flex;
-    flex-direction: column;
+```
+display: flex;
+flex-direction: column;
 
-    gap: 12px;
+gap: 12px;
+```
+
 }
 
-
 /* ========================================
-   ELEMENTER
+ELEMENTER
 ======================================== */
 
 .item {
-    width: 100%;
+width: 100%;
 }
 
 .item img,
 .item video {
-    display: block;
+display: block;
 
-    width: 100%;
-    height: auto;
+```
+width: 100%;
+height: auto;
 
-    object-fit: contain;
+object-fit: contain;
 
-    cursor: zoom-in;
+cursor: zoom-in;
 
-    transition: opacity 0.25s ease;
+transition: opacity 0.25s ease;
+```
+
 }
 
 .item img:hover,
 .item video:hover {
-    opacity: 0.85;
+opacity: 0.85;
 }
 
-
 /* ========================================
-   BILDER
+BILDER
 ======================================== */
 
 .large {
-    width: 100%;
+width: 100%;
 }
 
-
 /* ========================================
-   VIDEOER
+VIDEOER
 ======================================== */
 
 .video {
-    width: 88%;
+width: 88%;
 }
 
 .video-left {
-    margin-left: 0;
+margin-left: 0;
 }
 
 .video-right {
-    margin-left: auto;
+margin-left: auto;
 }
 
-
 /* ========================================
-   SMÅ FORSKYVNINGER
+SMÅ FORSKYVNINGER
 ======================================== */
 
 .first-video {
-    transform: translateX(1%);
+transform: translateX(1%);
 }
 
 .video-left {
-    transform: translateX(-1%);
+transform: translateX(-1%);
 }
 
 .right-column .video:not(.first-video) {
-    transform: translateX(1%);
+transform: translateX(1%);
 }
 
-
 /* ========================================
-   VIDEOER I SVART/HVITT
+VIDEOER I SVART/HVITT
 ======================================== */
 
 .video video {
-    filter: grayscale(100%);
+filter: grayscale(100%);
 }
 
-
 /* ========================================
-   LIGHTBOX
+LIGHTBOX
 ======================================== */
 
 .lightbox {
-    position: fixed;
+position: fixed;
 
-    inset: 0;
+```
+inset: 0;
 
-    width: 100%;
-    height: 100%;
+width: 100%;
+height: 100%;
 
-    background: rgba(255, 20, 147, 0.96);
+background: rgba(255, 20, 147, 0.96);
 
-    display: flex;
+display: flex;
 
-    justify-content: center;
-    align-items: center;
+justify-content: center;
+align-items: center;
 
-    padding: 40px;
+padding: 40px;
 
-    opacity: 0;
-    visibility: hidden;
+opacity: 0;
+visibility: hidden;
 
-    z-index: 5000;
+z-index: 5000;
 
-    transition: opacity 0.2s ease;
+transition: opacity 0.2s ease;
+```
+
 }
 
 .lightbox.active {
-    opacity: 1;
-    visibility: visible;
+opacity: 1;
+visibility: visible;
 }
 
-
 /* ========================================
-   LIGHTBOX INNHOLD
+LIGHTBOX INNHOLD
 ======================================== */
 
 .lightbox-inner {
-    width: 100%;
-    height: 100%;
+width: 100%;
+height: 100%;
 
-    display: flex;
+```
+display: flex;
 
-    justify-content: center;
-    align-items: center;
+justify-content: center;
+align-items: center;
+```
+
 }
 
 .lightbox-inner img,
 .lightbox-inner video {
-    display: block;
+display: block;
 
-    max-width: 95vw;
-    max-height: 92vh;
+```
+max-width: 95vw;
+max-height: 92vh;
 
-    width: auto;
-    height: auto;
+width: auto;
+height: auto;
 
-    object-fit: contain;
+object-fit: contain;
+```
+
 }
 
-
 /* ========================================
-   LIGHTBOX VIDEO
+LIGHTBOX VIDEO
 ======================================== */
 
 .lightbox-inner video {
-    filter: grayscale(100%);
+filter: grayscale(100%);
 }
 
-
 /* ========================================
-   LUKKEKNAPP
+LUKKEKNAPP
 ======================================== */
 
 .close {
-    position: absolute;
+position: absolute;
 
-    top: 16px;
-    right: 27px;
+```
+top: 16px;
+right: 27px;
 
-    border: 0;
+border: 0;
 
-    background: none;
+background: none;
 
-    color: white;
+color: white;
 
-    font-family: Arial, sans-serif;
+font-family: Arial, sans-serif;
 
-    font-size: 50px;
-    font-weight: 200;
+font-size: 50px;
+font-weight: 200;
 
-    line-height: 1;
+line-height: 1;
 
-    cursor: pointer;
+cursor: pointer;
 
-    z-index: 5001;
+z-index: 5001;
+```
+
 }
 
 .close:hover {
-    opacity: 0.55;
+opacity: 0.55;
 }
 
-
 /* ========================================
-   STOPP SCROLLING
+STOPP SCROLLING
 ======================================== */
 
 .no-scroll {
-    overflow: hidden;
+overflow: hidden;
 }
 
-
 /* ========================================
-   MOBIL
+MOBIL
 ======================================== */
 
 @media (max-width: 700px) {
 
-    .navbar {
-        padding: 18px;
-    }
+```
+.navbar {
+    padding: 18px;
+}
 
-    .navbar a {
-        font-size: 15px;
-    }
+.navbar a {
+    font-size: 15px;
+}
 
-    .logo {
-        font-size: 16px !important;
-    }
+.logo {
+    font-size: 16px !important;
+}
 
-
-    main {
-        padding-top: 75px;
-        padding-bottom: 60px;
-    }
-
-
-    /* ----------------------------------------
-       INTRO
-    ---------------------------------------- */
-
-    .intro {
-        width: 94%;
-
-        display: block;
-
-        padding: 35px 0 30px;
-    }
-
-    .intro h1 {
-        font-size: 54px;
-    }
-
-    .year {
-        margin-top: 25px;
-
-        font-size: 15px;
-    }
-
-    .intro p {
-        max-width: 350px;
-
-        margin-top: 25px;
-    }
+main {
+    padding-top: 75px;
+    padding-bottom: 60px;
+}
 
 
-    /* ----------------------------------------
-       MOBILGRID
-    ---------------------------------------- */
+/* ----------------------------------------
+   INTRO
+---------------------------------------- */
 
-    .lettering-grid {
-        width: 94%;
+.intro {
+    width: 94%;
 
-        display: flex;
-        flex-direction: column;
+    display: block;
 
-        gap: 7px;
-    }
+    padding: 35px 0 30px;
+}
 
+.intro h1 {
+    font-size: 54px;
+}
 
-    /*
-       Vi "flater ut" de to kolonnene.
+.year {
+    margin-top: 25px;
 
-       HTML-en beholdes helt uendret,
-       men elementene kan nå sorteres
-       sammen på mobil.
-    */
+    font-size: 15px;
+}
 
-    .column {
-        display: contents;
-    }
+.intro p {
+    max-width: 350px;
 
-
-    /*
-       Riktig mobilrekkefølge:
-
-       1. lettering1
-       2. video1
-       3. lettering2
-       4. video2
-       5. lettering3
-       6. video3
-       7. lettering4
-    */
+    margin-top: 25px;
+}
 
 
-    /* BILDE 1 */
+/* ----------------------------------------
+   MOBILGRID
+---------------------------------------- */
 
-    .left-column .item:nth-child(1) {
-        order: 1;
-    }
+.lettering-grid {
+    width: 94%;
 
+    display: flex;
+    flex-direction: column;
 
-    /* VIDEO 1 */
+    gap: 7px;
+}
 
-    .right-column .item:nth-child(1) {
-        order: 2;
-    }
-
-
-    /* BILDE 2 */
-
-    .right-column .item:nth-child(2) {
-        order: 3;
-    }
+.column {
+    display: contents;
+}
 
 
-    /* VIDEO 2 */
+/* Riktig mobilrekkefølge */
 
-    .left-column .item:nth-child(2) {
-        order: 4;
-    }
+.left-column .item:nth-child(1) {
+    order: 1;
+}
 
+.right-column .item:nth-child(1) {
+    order: 2;
+}
 
-    /* BILDE 3 */
+.right-column .item:nth-child(2) {
+    order: 3;
+}
 
-    .left-column .item:nth-child(3) {
-        order: 5;
-    }
+.left-column .item:nth-child(2) {
+    order: 4;
+}
 
+.left-column .item:nth-child(3) {
+    order: 5;
+}
 
-    /* VIDEO 3 */
+.right-column .item:nth-child(3) {
+    order: 6;
+}
 
-    .right-column .item:nth-child(3) {
-        order: 6;
-    }
-
-
-    /* BILDE 4 */
-
-    .left-column .item:nth-child(4) {
-        order: 7;
-    }
-
-
-    /* ----------------------------------------
-       VIDEOER
-    ---------------------------------------- */
-
-    .video {
-        width: 92%;
-    }
+.left-column .item:nth-child(4) {
+    order: 7;
+}
 
 
-    /* ----------------------------------------
-       LIGHTBOX
-    ---------------------------------------- */
+/* ----------------------------------------
+   VIDEOER
+---------------------------------------- */
 
-    .lightbox {
-        padding: 20px;
-    }
+.video {
+    width: 92%;
+}
 
-    .lightbox-inner img,
-    .lightbox-inner video {
-        max-width: 97vw;
-        max-height: 86vh;
-    }
 
-    .close {
-        top: 10px;
-        right: 17px;
+/* ----------------------------------------
+   LIGHTBOX
+---------------------------------------- */
 
-        font-size: 42px;
-    }
+.lightbox {
+    padding: 20px;
+}
+
+.lightbox-inner img,
+.lightbox-inner video {
+    max-width: 97vw;
+    max-height: 86vh;
+}
+
+.close {
+    top: 10px;
+    right: 17px;
+
+    font-size: 42px;
+}
 
 }
