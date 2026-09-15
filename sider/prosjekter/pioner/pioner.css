@@ -313,6 +313,11 @@ main {
     object-fit: contain;
 }
 
+
+/* =========================
+   LUKKEKNAPP
+========================= */
+
 .close {
     position: absolute;
 
@@ -340,6 +345,11 @@ main {
 .close:hover {
     opacity: 0.55;
 }
+
+
+/* =========================
+   STOPP SCROLLING
+========================= */
 
 .no-scroll {
     overflow: hidden;
@@ -371,7 +381,9 @@ main {
     }
 
 
-    /* INTRO */
+    /* -------------------------
+       INTRO
+    ------------------------- */
 
     .intro {
         width: 94%;
@@ -386,7 +398,9 @@ main {
     }
 
 
-    /* ÅRSTALL */
+    /* -------------------------
+       ÅRSTALL
+    ------------------------- */
 
     .year {
         margin-top: 70px;
@@ -395,6 +409,10 @@ main {
     }
 
 
+    /* -------------------------
+       BESKRIVELSE
+    ------------------------- */
+
     .intro p {
         max-width: 350px;
 
@@ -402,18 +420,22 @@ main {
     }
 
 
-    /* BILDER */
+    /* -------------------------
+       BILDER – ÉN KOLONNE
+    ------------------------- */
 
     .project-grid {
         width: 94%;
 
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
 
         gap: 7px;
     }
 
 
-    /* KREDITERING */
+    /* -------------------------
+       KREDITERING
+    ------------------------- */
 
     .photo-credit {
         margin-top: 5px;
@@ -422,7 +444,9 @@ main {
     }
 
 
-    /* LIGHTBOX */
+    /* -------------------------
+       LIGHTBOX
+    ------------------------- */
 
     .lightbox {
         padding: 20px;
