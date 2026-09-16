@@ -1,3 +1,7 @@
+/* =====================================
+   RESET
+===================================== */
+
 * {
     box-sizing: border-box;
 }
@@ -125,6 +129,7 @@ body {
 .projects-dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
+
     transform: translateY(0);
 }
 
@@ -235,16 +240,18 @@ body {
     width: 94%;
     max-width: 1900px;
 
-    margin: 0 auto 70px;
+    margin: 0 auto 80px;
 }
 
-.seep-main img {
+.seep-main-image {
+    width: 65%;
+}
+
+.seep-main-image img {
     display: block;
 
     width: 100%;
     height: auto;
-
-    max-width: 100%;
 
     object-fit: contain;
 
@@ -253,7 +260,7 @@ body {
     transition: opacity 0.3s ease;
 }
 
-.seep-main img:hover {
+.seep-main-image img:hover {
     opacity: 0.8;
 }
 
@@ -294,6 +301,7 @@ body {
     display: block;
 
     width: 100%;
+
     aspect-ratio: 1 / 1;
 
     object-fit: cover;
@@ -321,6 +329,8 @@ body {
 
 .seep-item video {
     background: #000;
+
+    object-fit: cover;
 }
 
 
@@ -497,7 +507,11 @@ body {
         margin: 0 auto 45px;
     }
 
-    .seep-main img {
+    .seep-main-image {
+        width: 100%;
+    }
+
+    .seep-main-image img {
         width: 100%;
         height: auto;
     }
