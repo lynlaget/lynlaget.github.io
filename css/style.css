@@ -12,6 +12,7 @@ html {
 
 body {
     margin: 0;
+
     background: #ff1493;
     color: white;
 
@@ -33,10 +34,12 @@ body {
 
 .navbar {
     position: fixed;
+
     top: 0;
     left: 0;
 
     width: 100%;
+
     padding: 24px 32px;
 
     display: grid;
@@ -80,6 +83,7 @@ body {
     content: "";
 
     position: absolute;
+
     top: 100%;
     left: 0;
 
@@ -216,7 +220,7 @@ main {
 
 
 /* =====================================
-   TETT ASYMMETRISK GRID
+   ASYMMETRISK GRID
 ===================================== */
 
 
@@ -227,68 +231,84 @@ main {
 }
 
 
-/* 2. BACHELOR */
+/* 2. SEEP */
 
 .project-2 {
     grid-column: 8 / span 5;
+
     margin-top: 45px;
 }
 
 
-/* 3. OMAR SHERIFF */
-/* Tar nå plassen Love Sting hadde */
+/* 3. BACHELOR */
 
 .project-3 {
     grid-column: 1 / span 6;
+
     margin-top: 5px;
 }
 
 
-/* 4. MEANING OF LIFE */
+/* 4. OMAR SHERIFF */
 
 .project-4 {
     grid-column: 7 / span 6;
+
     margin-top: 25px;
 }
 
 
-/* 5. TRESNITT */
+/* 5. MEANING OF LIFE */
 
 .project-5 {
     grid-column: 2 / span 6;
+
     margin-top: 5px;
 }
 
 
-/* 6. CLOCKWORK SKY */
+/* 6. TRESNITT */
 
 .project-6 {
     grid-column: 8 / span 5;
+
     margin-top: 30px;
 }
 
 
-/* 7. LETTERING */
+/* 7. CLOCKWORK SKY */
 
 .project-7 {
     grid-column: 1 / span 6;
+
     margin-top: 5px;
 }
 
 
-/* 8. PIONÉR */
+/* 8. LETTERING */
 
 .project-8 {
     grid-column: 7 / span 6;
+
     margin-top: 25px;
 }
 
 
-/* 9. PANG */
+/* 9. PIONÉR */
 
 .project-9 {
     grid-column: 2 / span 6;
+
     margin-top: 5px;
+}
+
+
+/* 10. PANG */
+
+.project-10 {
+    grid-column: 8 / span 5;
+
+    margin-top: 30px;
 }
 
 
@@ -311,6 +331,7 @@ main {
 
 @media (max-width: 700px) {
 
+
     /* NAVIGASJON */
 
     .navbar {
@@ -330,11 +351,13 @@ main {
 
     .dropdown-menu {
         top: 25px;
+
         width: 200px;
     }
 
     .dropdown-menu a {
         font-size: 13px;
+
         padding: 4px 0;
     }
 
@@ -375,7 +398,9 @@ main {
     .project-6,
     .project-7,
     .project-8,
-    .project-9 {
+    .project-9,
+    .project-10 {
         margin-top: 0;
     }
+
 }
