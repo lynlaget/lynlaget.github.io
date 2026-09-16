@@ -124,13 +124,13 @@
         <div class="seep-item">
 
             <video
-                src="bilder/seep1.mp4"
-                autoplay
-                muted
-                loop
+                controls
                 playsinline
-                preload="auto"
-            ></video>
+                preload="metadata"
+            >
+                <source src="bilder/seep1.mp4" type="video/mp4">
+                Nettleseren din støtter ikke video.
+            </video>
 
         </div>
 
@@ -140,11 +140,13 @@
         <div class="seep-item">
 
             <video
-                src="bilder/seep2.mp4"
                 controls
                 playsinline
                 preload="metadata"
-            ></video>
+            >
+                <source src="bilder/seep2.mp4" type="video/mp4">
+                Nettleseren din støtter ikke video.
+            </video>
 
         </div>
 
@@ -177,25 +179,6 @@
 
 
 <script>
-
-
-/* =====================================
-   AUTOPLAY VIDEO
-===================================== */
-
-const videos = document.querySelectorAll("video");
-
-videos.forEach(video => {
-
-    video.muted = true;
-
-    video.play().catch(() => {
-        // Nettleseren kan blokkere autoplay.
-        // Videoen forsøkes startet igjen når siden er lastet.
-    });
-
-});
-
 
 /* =====================================
    LIGHTBOX
@@ -271,7 +254,6 @@ document.addEventListener(
 
     }
 );
-
 
 </script>
 
