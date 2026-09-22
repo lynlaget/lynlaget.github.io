@@ -135,9 +135,6 @@ body {
     opacity: 0.55;
 }
 
-
-/* Hold dropdown åpen */
-
 .projects-dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
@@ -202,8 +199,7 @@ main {
     color: white;
     text-decoration: none;
 
-    transition:
-        transform 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
 .project img {
@@ -214,14 +210,20 @@ main {
 
     object-fit: contain;
 
-    transition:
-        opacity 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 
 /* =====================================
-   ASYMMETRISK GRID
+   GRID
 ===================================== */
+
+/*
+   142 får en egen plass øverst.
+
+   Deretter beholder vi omtrent samme
+   størrelser og asymmetri som før.
+*/
 
 
 /* 1. 142 */
@@ -340,9 +342,6 @@ main {
 
 @media (max-width: 700px) {
 
-
-    /* NAVIGASJON */
-
     .navbar {
         padding: 18px;
     }
@@ -360,20 +359,16 @@ main {
 
     .dropdown-menu {
         top: 25px;
-
         width: 200px;
     }
 
     .dropdown-menu a {
         font-size: 13px;
-
         padding: 4px 0;
     }
 
 
-    /* =====================================
-       PROSJEKTER
-    ===================================== */
+    /* PROSJEKTER */
 
     main {
         padding: 90px 14px 100px;
