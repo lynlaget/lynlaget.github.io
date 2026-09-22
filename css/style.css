@@ -224,14 +224,14 @@ main {
 ===================================== */
 
 
-/* 1. ARGUMENT */
+/* 1. 142 */
 
 .project-1 {
     grid-column: 1 / span 7;
 }
 
 
-/* 2. SEEP */
+/* 2. ARGUMENT */
 
 .project-2 {
     grid-column: 8 / span 5;
@@ -240,7 +240,7 @@ main {
 }
 
 
-/* 3. BACHELOR */
+/* 3. SEEP */
 
 .project-3 {
     grid-column: 1 / span 6;
@@ -249,7 +249,7 @@ main {
 }
 
 
-/* 4. OMAR SHERIFF */
+/* 4. BACHELOR */
 
 .project-4 {
     grid-column: 7 / span 6;
@@ -258,7 +258,7 @@ main {
 }
 
 
-/* 5. MEANING OF LIFE */
+/* 5. OMAR SHERIFF */
 
 .project-5 {
     grid-column: 2 / span 6;
@@ -267,7 +267,7 @@ main {
 }
 
 
-/* 6. TRESNITT */
+/* 6. MEANING OF LIFE */
 
 .project-6 {
     grid-column: 8 / span 5;
@@ -276,7 +276,7 @@ main {
 }
 
 
-/* 7. CLOCKWORK SKY */
+/* 7. TRESNITT */
 
 .project-7 {
     grid-column: 1 / span 6;
@@ -285,7 +285,7 @@ main {
 }
 
 
-/* 8. LETTERING */
+/* 8. CLOCKWORK SKY */
 
 .project-8 {
     grid-column: 7 / span 6;
@@ -294,7 +294,7 @@ main {
 }
 
 
-/* 9. PIONÉR */
+/* 9. LETTERING */
 
 .project-9 {
     grid-column: 2 / span 6;
@@ -303,12 +303,21 @@ main {
 }
 
 
-/* 10. PANG */
+/* 10. PIONÉR */
 
 .project-10 {
     grid-column: 8 / span 5;
 
     margin-top: 30px;
+}
+
+
+/* 11. PANG */
+
+.project-11 {
+    grid-column: 1 / span 6;
+
+    margin-top: 5px;
 }
 
 
@@ -399,7 +408,8 @@ main {
     .project-7,
     .project-8,
     .project-9,
-    .project-10 {
+    .project-10,
+    .project-11 {
         margin-top: 0;
     }
 
