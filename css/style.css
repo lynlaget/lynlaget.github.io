@@ -1,3 +1,4 @@
+
 /* =====================================
    RESET
 ===================================== */
@@ -12,7 +13,6 @@ html {
 
 body {
     margin: 0;
-
     background: #ff1493;
     color: white;
 
@@ -34,17 +34,14 @@ body {
 
 .navbar {
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100%;
 
     padding: 24px 32px;
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-
     align-items: start;
 
     z-index: 1000;
@@ -53,7 +50,6 @@ body {
 .navbar a {
     color: white;
     text-decoration: none;
-
     font-size: 17px;
     line-height: 1;
 }
@@ -76,40 +72,27 @@ body {
     display: block;
 }
 
-
-/* Usynlig hover-sone */
-
 .projects-dropdown::after {
     content: "";
-
     position: absolute;
-
     top: 100%;
     left: 0;
-
     width: 220px;
     height: 20px;
 }
 
-
-/* Dropdown */
-
 .dropdown-menu {
     position: absolute;
-
     top: 28px;
     left: 0;
-
-    width: 220px;
-
-    padding: 10px 0 0 0;
+    width: 260px;
+    padding: 10px 0 0;
 
     display: flex;
     flex-direction: column;
 
     opacity: 0;
     visibility: hidden;
-
     transform: translateY(-5px);
 
     transition:
@@ -121,12 +104,9 @@ body {
 
 .dropdown-menu a {
     display: block;
-
     padding: 4px 0;
-
     color: white;
     text-decoration: none;
-
     font-size: 14px;
     line-height: 1.2;
 }
@@ -138,7 +118,6 @@ body {
 .projects-dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
-
     transform: translateY(0);
 }
 
@@ -150,7 +129,6 @@ body {
 .logo {
     justify-self: center;
     text-align: center;
-
     font-size: 18px !important;
 }
 
@@ -175,12 +153,10 @@ main {
 .project-grid {
     width: 96%;
     max-width: 1900px;
-
     margin: 0 auto;
 
     display: grid;
-
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(12, minmax(0, 1fr));
 
     column-gap: 24px;
     row-gap: 35px;
@@ -195,6 +171,7 @@ main {
 
 .project {
     display: block;
+    min-width: 0;
 
     color: white;
     text-decoration: none;
@@ -204,7 +181,6 @@ main {
 
 .project img {
     display: block;
-
     width: 100%;
     height: auto;
 
@@ -218,107 +194,105 @@ main {
    GRID
 ===================================== */
 
-/*
-   142 får en egen plass øverst.
-
-   Deretter beholder vi omtrent samme
-   størrelser og asymmetri som før.
-*/
-
-
-/* 1. 142 */
+/* 1. WHAT'S THE POINT OF PIDGEON RACING */
 
 .project-1 {
-    grid-column: 1 / span 5;
+    grid-column: 1 / span 7;
 }
 
 
-/* 2. ARGUMENT */
+/* 2. DELIRIUM */
 
 .project-2 {
-    grid-column: 8 / span 6;
-
+    grid-column: 8 / span 5;
     margin-top: 45px;
 }
 
 
-/* 3. SEEP */
+/* 3. 142 */
 
 .project-3 {
-    grid-column: 1 / span 6;
-
+    grid-column: 2 / span 5;
     margin-top: 5px;
 }
 
 
-/* 4. BACHELOR */
+/* 4. ARGUMENT */
 
 .project-4 {
     grid-column: 7 / span 6;
-
     margin-top: 25px;
 }
 
 
-/* 5. OMAR SHERIFF */
+/* 5. SEEP */
 
 .project-5 {
-    grid-column: 2 / span 6;
-
+    grid-column: 1 / span 6;
     margin-top: 5px;
 }
 
 
-/* 6. MEANING OF LIFE */
+/* 6. BACHELOR */
 
 .project-6 {
-    grid-column: 8 / span 5;
-
-    margin-top: 30px;
-}
-
-
-/* 7. TRESNITT */
-
-.project-7 {
-    grid-column: 1 / span 6;
-
-    margin-top: 5px;
-}
-
-
-/* 8. CLOCKWORK SKY */
-
-.project-8 {
     grid-column: 7 / span 6;
-
     margin-top: 25px;
 }
 
 
-/* 9. LETTERING */
+/* 7. OMAR SHERIFF */
 
-.project-9 {
+.project-7 {
     grid-column: 2 / span 6;
-
     margin-top: 5px;
 }
 
 
-/* 10. PIONÉR */
+/* 8. MEANING OF LIFE */
 
-.project-10 {
+.project-8 {
     grid-column: 8 / span 5;
-
     margin-top: 30px;
 }
 
 
-/* 11. PANG */
+/* 9. TRESNITT */
+
+.project-9 {
+    grid-column: 1 / span 6;
+    margin-top: 5px;
+}
+
+
+/* 10. CLOCKWORK SKY */
+
+.project-10 {
+    grid-column: 7 / span 6;
+    margin-top: 25px;
+}
+
+
+/* 11. LETTERING */
 
 .project-11 {
-    grid-column: 1 / span 6;
+    grid-column: 2 / span 6;
+    margin-top: 5px;
+}
 
+
+/* 12. PIONÉR */
+
+.project-12 {
+    grid-column: 8 / span 5;
+    margin-top: 30px;
+}
+
+
+/* 13. PANG — STØRRE PLASSERING */
+
+.project-13 {
+    grid-column: 3 / span 8;
     margin-top: 5px;
 }
 
@@ -359,7 +333,7 @@ main {
 
     .dropdown-menu {
         top: 25px;
-        width: 200px;
+        width: 240px;
     }
 
     .dropdown-menu a {
@@ -392,7 +366,7 @@ main {
     }
 
 
-    /* Fjern desktop-marginer på mobil */
+    /* FJERN DESKTOP-MARGINER */
 
     .project-1,
     .project-2,
@@ -404,7 +378,9 @@ main {
     .project-8,
     .project-9,
     .project-10,
-    .project-11 {
+    .project-11,
+    .project-12,
+    .project-13 {
         margin-top: 0;
     }
 
