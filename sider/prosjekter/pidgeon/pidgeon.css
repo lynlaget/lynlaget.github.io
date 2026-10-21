@@ -78,7 +78,7 @@ body {
     white-space: nowrap;
 }
 
-/* PROSJEKTSIDE */
+/* PROSJEKTINTRO */
 
 .project-page {
     padding-top: 85px;
@@ -120,21 +120,21 @@ body {
     line-height: 1.35;
 }
 
-/* BILDER */
+/* BILDE */
 
 .project-images {
     width: 94%;
     max-width: 1900px;
     margin: 0 auto;
     padding-bottom: 60px;
+    text-align: left;
 }
 
 .project-image {
     display: block;
     width: 100%;
     height: auto;
-    max-height: calc(100vh - 280px);
-    object-fit: contain;
+    margin: 0;
     cursor: zoom-in;
 }
 
@@ -200,7 +200,7 @@ body {
 
     .project-intro {
         width: 92%;
-        padding: 35px 0 35px;
+        padding: 35px 0;
         grid-template-columns: 1fr;
         gap: 0;
     }
@@ -227,6 +227,12 @@ body {
 
     .project-images {
         width: 92%;
+        padding-bottom: 30px;
+    }
+
+    .project-image {
+        width: 100%;
+        height: auto;
     }
 
     .lightbox {
