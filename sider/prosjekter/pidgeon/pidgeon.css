@@ -133,6 +133,8 @@ body {
     display: block;
     width: 100%;
     height: auto;
+    max-height: calc(100vh - 280px);
+    object-fit: contain;
     cursor: zoom-in;
 }
 
