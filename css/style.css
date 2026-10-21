@@ -197,7 +197,8 @@ main {
 /* 1. WHAT'S THE POINT OF PIDGEON RACING */
 
 .project-1 {
-    grid-column: 1 / span 5;
+    grid-column: 3 / span 4;
+    margin-top: 5px;
 }
 
 
