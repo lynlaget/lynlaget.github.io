@@ -10,33 +10,40 @@
 
 <body>
 
-    <nav class="navbar">
-        <a href="../../../index.html" class="nav-logo">LYN</a>
+    <header class="navbar">
 
-        <div class="nav-links">
-            <div class="dropdown">
-                <a href="../../../index.html">prosjekter</a>
+        <div class="projects-dropdown">
+            <a href="../../../index.html" class="projects-link">
+                prosjekter
+            </a>
 
-                <div class="dropdown-content">
-                    <a href="../pidgeon/pidgeon.html">what's the point of pidgeon racing</a>
-                    <a href="../delirium/delirium.html">delirium</a>
-                    <a href="../142/142.html">142</a>
-                    <a href="../argument/argument.html">argument</a>
-                    <a href="../bachelor/bachelor.html">bachelor</a>
-                    <a href="../omarsheriff/omarsheriff.html">omar sheriff</a>
-                    <a href="../meaningoflife/meaningoflife.html">meaning of life</a>
-                    <a href="../tresnitt/tresnitt.html">tresnitt</a>
-                    <a href="../clockworksky/clockworksky.html">clockwork sky</a>
-                    <a href="../lettering/lettering.html">lettering</a>
-                    <a href="../pioner/pioner.html">pionér</a>
-                    <a href="../pang/pang.html">pang</a>
-                    <a href="../seep/seep.html">seep</a>
-                </div>
+            <div class="dropdown-menu">
+                <a href="../pidgeon/pidgeon.html">what's the point of pidgeon racing</a>
+                <a href="../delirium/delirium.html">delirium</a>
+                <a href="../142/142.html">142</a>
+                <a href="../argument/argument.html">argument</a>
+                <a href="../bachelor/bachelor.html">bachelor</a>
+                <a href="../clockworksky/clockworksky.html">clockwork sky</a>
+                <a href="../lettering/lettering.html">lettering</a>
+                <a href="../meaningoflife/meaningoflife.html">meaning of life</a>
+                <a href="../omarsheriff/omarsheriff.html">omar sheriff</a>
+                <a href="../pang/pang.html">pang</a>
+                <a href="../pioner/pioner.html">pioner</a>
+                <a href="../tresnitt/tresnitt.html">tresnitt</a>
+                <a href="../seep/seep.html">seep</a>
             </div>
-
-            <a href="../../kontakt/kontakt.html">kontakt</a>
         </div>
-    </nav>
+
+        <a href="../../../index.html" class="logo">
+            mina lynum
+        </a>
+
+        <a href="../../kontakt/kontakt.html" class="contact-link">
+            kontakt
+        </a>
+
+    </header>
+
 
     <main class="project-page">
 
@@ -55,47 +62,62 @@
 
         </section>
 
-        <section class="project-images">
-            <img
-                src="82.jpg"
-                alt="what's the point of pidgeon racing"
-                class="project-image"
-                id="mainImage"
-            >
+
+        <section class="project-main">
+            <div class="project-main-image">
+                <img
+                    src="82.jpg"
+                    alt="what's the point of pidgeon racing"
+                    class="zoomable"
+                >
+            </div>
         </section>
 
     </main>
 
+
     <div class="lightbox" id="lightbox">
-        <span class="lightbox-close" id="lightboxClose">&times;</span>
-        <img src="" alt="" id="lightboxImage">
+        <button class="close" id="lightboxClose" aria-label="Lukk bilde">
+            &times;
+        </button>
+
+        <div class="lightbox-inner">
+            <img src="" alt="" id="lightboxImage">
+        </div>
     </div>
 
+
     <script>
-        const mainImage = document.getElementById("mainImage");
+        const mainImage = document.querySelector(".zoomable");
         const lightbox = document.getElementById("lightbox");
         const lightboxImage = document.getElementById("lightboxImage");
         const lightboxClose = document.getElementById("lightboxClose");
 
-        mainImage.addEventListener("click", function () {
+        function openLightbox() {
             lightboxImage.src = mainImage.src;
             lightboxImage.alt = mainImage.alt;
             lightbox.classList.add("active");
-        });
+            document.body.classList.add("no-scroll");
+        }
 
-        lightboxClose.addEventListener("click", function () {
+        function closeLightbox() {
             lightbox.classList.remove("active");
-        });
+            document.body.classList.remove("no-scroll");
+        }
+
+        mainImage.addEventListener("click", openLightbox);
+
+        lightboxClose.addEventListener("click", closeLightbox);
 
         lightbox.addEventListener("click", function (event) {
             if (event.target === lightbox) {
-                lightbox.classList.remove("active");
+                closeLightbox();
             }
         });
 
         document.addEventListener("keydown", function (event) {
             if (event.key === "Escape") {
-                lightbox.classList.remove("active");
+                closeLightbox();
             }
         });
     </script>
