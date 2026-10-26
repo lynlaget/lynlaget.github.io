@@ -188,7 +188,6 @@ main {
     transition: opacity 0.3s ease;
 }
 
-
 /* =====================================
    GRID
 ===================================== */
@@ -292,7 +291,7 @@ main {
 /* 13. PIONÉR */
 
 .project-13 {
-    grid-column: 3 / span 8;
+    grid-column: 2 / span 6;
     margin-top: 5px;
 }
 
@@ -300,10 +299,9 @@ main {
 /* 14. PANG */
 
 .project-14 {
-    grid-column: 3 / span 8;
+    grid-column: 4 / span 6;
     margin-top: 5px;
 }
-
 
 /* =====================================
    HOVER
