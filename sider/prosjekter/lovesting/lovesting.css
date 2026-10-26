@@ -216,84 +216,6 @@ main {
 }
 
 
-/* ========================================
-   MOCKUP
-======================================== */
-
-.merch-mockup {
-    width: 72%;
-}
-
-.merch-mockup img {
-    display: block;
-    width: 100%;
-    height: auto;
-
-    cursor: zoom-in;
-
-    transition: opacity 0.25s ease;
-}
-
-.merch-mockup img:hover {
-    opacity: 0.88;
-}
-
-
-/* ========================================
-   SKISSE
-======================================== */
-
-.sketch {
-    width: 72%;
-}
-
-.sketch img {
-    display: block;
-    width: 100%;
-    height: auto;
-
-    cursor: zoom-in;
-
-    transition: opacity 0.25s ease;
-}
-
-.sketch img:hover {
-    opacity: 0.88;
-}
-
-
-/* ========================================
-   HØYRE KOLONNE
-======================================== */
-
-.right-column {
-    width: 100%;
-}
-
-
-/* ========================================
-   MERCH-ILLUSTRASJON
-======================================== */
-
-.merch-illustration {
-    width: 110%;
-    margin-left: -5%;   
-}
-
-.merch-illustration img {
-    display: block;
-    width: 100%;
-    height: auto;
-
-    cursor: zoom-in;
-
-    transition: opacity 0.25s ease;
-}
-
-.merch-illustration img:hover {
-    opacity: 0.88;
-}
-
 
 /* ========================================
    LIGHTBOX
@@ -454,10 +376,6 @@ main {
     }
 
     .merch-mockup {
-        width: 82%;
-    }
-
-    .sketch {
         width: 82%;
     }
 
