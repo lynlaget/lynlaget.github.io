@@ -196,7 +196,7 @@ main {
 /* 1. LOVE STING */
 
 .project-1 {
-    grid-column: 3 / span 7;
+    grid-column: 3 / span 6;
     margin-top: 5px;
 }
 
